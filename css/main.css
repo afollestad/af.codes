@@ -1,0 +1,319 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400);
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #242424;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #5F5F5F;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.flow-text, p {
+    font-size: 18px;
+    color: #D5D5D5;
+    line-height: 230%;
+}
+
+td {
+    font-size: 16px;
+    color: #D5D5D5;
+}
+
+th {
+    font-size: 14px;
+    color: #fff;
+}
+
+ul.side-nav li:hover, ul.side-nav li.active {
+    background-color: #1E88E5;
+}
+
+.top-nav {
+    height: 128px;
+}
+
+.top-nav .mdi-navigation-menu, .top-nav .right {
+    line-height: 128px;
+}
+
+.page-title {
+    font-size: 2.0rem;
+    line-height: 128px;
+}
+
+.right li a {
+    padding-left: 2.0rem;
+    padding-right: 2.0rem;
+}
+
+ul.side-nav {
+    background-color: #3F3F3F;
+}
+
+ul.side-nav li {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+ul.side-nav.fixed a {
+    width: 100%;
+    padding-left: 2.0rem;
+    padding-right: 2.0rem;
+    color: #fff;
+}
+
+ul.side-nav.fixed a:hover {
+    background-color: #1E88E5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+}
+
+h2 {
+    font-size: 3.0rem;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 1.7rem;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 400;
+}
+
+h6 {
+    font-size: 1.3rem;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 400;
+}
+
+.center-align {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: #1E88E5;
+    text-decoration: none;
+}
+
+.app-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.app-image-small {
+    max-width: 40%;
+    height: auto;
+}
+
+.valign-wrapper, .valign {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 260px;
+    /** Update margin in side nav offset section if changed **/
+    margin-left: -400px;
+    margin-top: -115px;
+}
+
+.valign h2 {
+    color: #1E88E5;
+    margin-bottom: 2%;
+}
+
+.valign h6 {
+    margin-top: 0;
+    padding-top: 0;
+    font-weight: 300;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.links a {
+    margin-right: 2%;
+    margin-bottom: 6%;
+    font-size: 18px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    padding: 0;
+}
+
+/** Side nav offset **/
+
+header, main, footer {
+    padding-left: 240px;
+}
+
+.valign-wrapper {
+    margin-left: -300px;
+}
+
+.homeParagraph {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+
+    .valign-wrapper {
+        margin-left: -400px;
+    }
+}
+
+/** Other responsive selectors **/
+
+@media only screen and (max-width: 600px) {
+    /* Mobile devices */
+    .button-collapse, .page-title {
+        margin-left: 8%;
+    }
+
+    h4, .container {
+        margin-top: 7%;
+    }
+
+    .container {
+        width: 80%;
+        margin-bottom: 4%;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+
+    h6 {
+        margin-top: 8%;
+        margin-bottom: 8%;
+    }
+
+    .app-image {
+        width: 100%;
+        margin-left: -2%;
+    }
+
+    .links a {
+        margin-right: 6%;
+    }
+
+    .homeParagraph {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+    /* Tablet */
+    .button-collapse, .page-title {
+        margin-left: 6%;
+    }
+
+    h4, .container {
+        margin-top: 5%;
+    }
+
+    .container {
+        margin-bottom: 3%;
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+
+    h6 {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    .app-image {
+        width: 100%;
+    }
+
+    .links a {
+        margin-right: 5%;
+    }
+
+    .homeParagraph {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    /* Desktop */
+    .button-collapse, .page-title {
+        margin-left: 4%;
+    }
+
+    h4, .container {
+        margin-top: 3%;
+    }
+
+    .container {
+        width: 85%;
+        margin-bottom: 2%;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+
+    h6, form {
+        margin-top: 4%;
+        margin-bottom: 4%;
+    }
+
+    .app-image {
+        width: 90%;
+    }
+
+    .app-image-small {
+        width: 36%;
+    }
+
+    .homeParagraph {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    /* Very large desktops */
+    .app-image {
+        width: 80%;
+    }
+
+    .app-image-small {
+        max-width: 32%;
+    }
+
+    .homeParagraph {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1700px) {
+    /* Even larger desktops */
+    .app-image {
+        width: 70%;
+    }
+
+    .app-image-small {
+        max-width: 25%;
+    }
+
+    .homeParagraph {
+        width: 80%;
+    }
+}
