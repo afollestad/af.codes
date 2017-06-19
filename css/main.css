@@ -6,6 +6,14 @@ body {
     background-color: #242424;
 }
 
+nav,
+nav .nav-wrapper i,
+nav a.button-collapse,
+nav a.button-collapse i {
+    height: 128px !important;
+    line-height: 128px !important;
+}
+
 hr {
     display: block;
     height: 1px;
