@@ -1,0 +1,117 @@
+html, body {
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #F5F5F5;
+}
+
+.blue-text {
+    color: rgb(83, 109, 254);
+}
+
+#spaContainer {
+    padding: 1% 2%;
+}
+
+h1, h2, h3, h4, h5, h6, .mdl-layout-title {
+    font-family: 'Roboto Mono', monospace !important;
+}
+
+b, strong {
+    font-weight: 700 !important;
+}
+
+span, p {
+    font-weight: 400 !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #424242;
+}
+
+.flow-text {
+    line-height: 210%;
+}
+
+.mdl-layout__header-row {
+    padding: 0 20px 0 2.1rem;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #E0E0E0;
+}
+
+.centered, .centered tr, .centered tr td {
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.centered .mdl-grid {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.mdl-card {
+    width: 100%;
+    height: 100%;
+}
+
+.mdl-card img {
+    width: 100%;
+    height: auto;
+}
+
+.mdl-card p {
+    margin: 1.4rem;
+}
+
+h5 a {
+    text-decoration: none !important;
+}
+
+a {
+    text-decoration: none !important;
+    transition: background 0.5s linear;
+}
+
+.mdl-layout-title a {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.mdl-navigation__link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 839px) and (min-width: 480px) {
+    .mdl-cell--3-col {
+        width: calc(48.7% - 16px) !important;
+    }
+
+    .mdl-cell--6-col {
+        width: calc(97.5% - 16px);
+    }
+
+    h5 a {
+        line-height: 2.0rem;
+    }
+}
+
+@media (max-width: 479px) {
+    .mdl-cell--3-col {
+        width: calc(96.7% - 16px) !important;
+    }
+
+    .mdl-cell--6-col {
+        width: calc(97.5% - 16px);
+    }
+
+    h5 a {
+        line-height: 2.0rem;
+    }
+}
