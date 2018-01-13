@@ -47,6 +47,11 @@
           hash = '#highlights';
         }
         var plain = hash.substring(1);
+        if (plain === 'highlights') {
+          $('.mdl-layout-title a').text('Aidan');
+        } else {
+          $('.mdl-layout-title a').text('Highlights');
+        }
         navigateToPage('./pages/' + plain + '.html');
       }
     </script>
