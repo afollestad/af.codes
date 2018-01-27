@@ -116,7 +116,7 @@ a {
     }
 
     .mdl-layout__header-row {
-        padding-left: 0 !important;
+        padding-left: 1.0rem !important;
         padding-right: 0 !important;
     }
 }
