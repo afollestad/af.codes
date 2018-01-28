@@ -120,3 +120,22 @@ a {
         padding-right: 0 !important;
     }
 }
+
+@media (min-width: 479px) {
+    .mdl-cell--3-col {
+        width: calc(16.6% - 16px) !important;
+    }
+
+    .mdl-cell--6-col {
+        width: calc(16.6% - 16px);
+    }
+
+    h5 a {
+        line-height: 2.0rem;
+    }
+
+    .mdl-layout__header-row {
+        padding-left: 1.0rem !important;
+        padding-right: 0 !important;
+    }
+}
