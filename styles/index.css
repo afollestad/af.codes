@@ -123,11 +123,11 @@ a {
 
 @media (min-width: 479px) {
     .mdl-cell--3-col {
-        width: calc(20% - 16px) !important;
+        width: calc(16.67% - 16px) !important;
     }
 
     .mdl-cell--6-col {
-        width: calc(20% - 16px);
+        width: calc(16.67% - 16px);
     }
 
     h5 a {
