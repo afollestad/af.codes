@@ -121,7 +121,7 @@ a {
     }
 }
 
-@media (min-width: 479px) {
+@media (min-width: 2100px) {
     .mdl-cell--3-col {
         width: calc(16.67% - 16px) !important;
     }
