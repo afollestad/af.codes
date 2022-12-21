@@ -71,3 +71,7 @@
 .grid-hero h2 {
     color: var(--secondary-text-color) !important;
 }
+
+.btns-frame .icon {
+    filter: invert(1);
+}

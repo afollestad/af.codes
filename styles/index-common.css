@@ -146,3 +146,17 @@
         margin-right: .05rem !important
     }
 }
+
+.btns-frame .mr-2 {
+    padding-left: 12px;
+    border-bottom: none !important;
+}
+
+.btns-frame .mr-2:first-child {
+    padding-left: 0;
+}
+
+.btns-frame .icon {
+    width: 48px;
+    height: 48px;
+}
