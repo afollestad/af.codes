@@ -122,12 +122,8 @@
 }
 
 @media (max-width:375px) {
-    p.btns-frame .btn.btn-lg {
-        padding-left: .4rem !important;
-        padding-right: .4rem !important;
-    }
     .card-header {
-        padding-top: .5rem !important;
+        padding-top: .4rem !important;
     }
 }
 
@@ -143,20 +139,19 @@
         margin-right: -.9rem;
     }
     .mr-2 {
-        margin-right: .05rem !important
+        margin-right: .6rem !important
     }
 }
 
-.btns-frame .mr-2 {
-    padding-left: 12px;
-    border-bottom: none !important;
+@media (min-width:601px) {
+    .mr-2 {
+        margin-right: .7rem !important
+    }
 }
 
-.btns-frame .mr-2:first-child {
-    padding-left: 0;
-}
-
-.btns-frame .icon {
+.icon, .icon img {
+    display: inline;
     width: 48px;
     height: 48px;
+    border-bottom: none !important;
 }

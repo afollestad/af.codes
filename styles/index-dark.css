@@ -72,6 +72,6 @@
     color: var(--secondary-text-color) !important;
 }
 
-.btns-frame .icon {
+.icon img {
     filter: invert(1);
 }
