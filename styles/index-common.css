@@ -154,12 +154,17 @@
     }
 }
 
-.icon, .icon img {
-    display: inline;
+.icon {
     width: 48px;
     height: 48px;
     border-bottom: none !important;
     text-decoration: none !important;
+}
+
+.icon img {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
 }
 
 .img-link {
