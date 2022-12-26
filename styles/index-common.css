@@ -6,6 +6,7 @@
 
 .raised {
     margin-bottom: 1.1rem;
+    border-radius: .4rem;
 }
 
 .bg-primary a:not(.btn) {
