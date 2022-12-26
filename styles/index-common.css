@@ -134,12 +134,11 @@
     .grid-hero .card {
         padding: 0
     }
-    .btns-frame {
-        margin-left: -.9rem;
-        margin-right: -.9rem;
-    }
     .mr-2 {
         margin-right: .6rem !important
+    }
+    .icons-frame {
+        margin-bottom: 1rem !important;
     }
 }
 
