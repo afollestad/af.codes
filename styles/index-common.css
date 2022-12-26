@@ -120,6 +120,8 @@
 .card-body img {
     width: 100%;
     height: auto;
+    display: block;
+    margin-bottom: .5rem;
 }
 
 @media (max-width:375px) {
@@ -141,6 +143,9 @@
     .icons-frame {
         margin-bottom: 1rem !important;
     }
+    .card-body img {
+        margin-bottom: .8rem;
+    }
 }
 
 @media (min-width:601px) {
@@ -153,5 +158,11 @@
     display: inline;
     width: 48px;
     height: 48px;
+    border-bottom: none !important;
+    text-decoration: none !important;
+}
+
+.img-link {
+    text-decoration: none !important;
     border-bottom: none !important;
 }
