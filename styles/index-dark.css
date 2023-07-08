@@ -8,11 +8,14 @@
     --secondary-text-on-primary-color: #e5e5f9;
     --theme-background-color: #121212;
     --primary-color: #0d47a1;
-    --primary-color-lighter: #5472d3;
+    --primary-color-lighter: #244dd3;
     --secondary-color: #002171;
 }
 
-/* dark theme only */
+html {
+    background: var(--primary-color) !important;
+}
+
 .bg-gray {
     color: var(--primary-text-color) !important;
     background: var(--theme-background-color) !important;
@@ -26,18 +29,23 @@
     border: .05rem solid var(--secondary-color) !important;
     color: var(--secondary-color) !important;
 }
+
 .btn.btn-primary {
     color: var(--primary-text-color) !important;
     background: var(--primary-color) !important;
 }
 
-.bg-gray a:not(.btn):not(.docs-logo), a {
+.bg-gray a:not(.btn):not(.docs-logo),
+a {
     color: var(--primary-text-color) !important;
 }
+
 .bg-gray .card .card-title {
     color: var(--primary-color-lighter) !important;
 }
-.bg-gray .text-secondary, .card {
+
+.bg-gray .text-secondary,
+.card {
     color: var(--secondary-text-color) !important;
 }
 
@@ -45,9 +53,11 @@
     color: var(--primary-text-color) !important;
     background: var(--primary-color) !important;
 }
+
 .bg-primary .card {
     color: var(--secondary-text-on-primary-color) !important;
 }
+
 .bg-primary .card .card-title {
     color: var(--primary-text-color) !important;
 }
@@ -57,7 +67,7 @@
 }
 
 .section-hero .docs-brand h2 {
-    color: var(--primary-color) !important;
+    color: var(--primary-color-lighter) !important;
 }
 
 .section-features.bg-gray h2 {
@@ -74,4 +84,28 @@
 
 .icon img {
     filter: invert(1);
+}
+
+.experiences .list-header h5 {
+    color: var(--primary-text-color) !important;
+}
+
+.experiences .list-wrapper .list-item h6 {
+    color: var(--primary-text-color) !important;
+}
+
+.experiences .list-wrapper .list-line {
+    background-color: white;
+}
+
+.experiences .list-wrapper .list-item-bullet {
+    background-color: white;
+}
+
+.experiences .list-wrapper .list-item .when {
+    color: rgba(255, 255, 255, .6);
+}
+
+.experiences .list-wrapper .list-item p {
+    color: rgba(255, 255, 255, .85);
 }

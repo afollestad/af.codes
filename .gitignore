@@ -107,3 +107,6 @@ fabric.properties
 # Sonarlint plugin
 
 # End of https://www.gitignore.io/api/intellij,webstorm
+
+*.DS_Store
+.DS_Store

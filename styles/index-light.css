@@ -11,6 +11,10 @@
     --secondary-color: #005b9f;
 }
 
+html {
+    background: var(--primary-color) !important;
+}
+
 .raised {
     box-shadow: 0 3px 6px rgba(255, 255, 255, 0.2), 0 3px 6px rgba(255, 255, 255, 0.3);
 }
@@ -63,4 +67,28 @@
 
 .grid-hero h2 {
     color: var(--secondary-text-color) !important;
+}
+
+.experiences .list-header h5 {
+    color: var(--primary-text-color) !important;
+}
+
+.experiences .list-wrapper .list-item h6 {
+    color: var(--primary-text-color) !important;
+}
+
+.experiences .list-wrapper .list-line {
+    background-color: black;
+}
+
+.experiences .list-wrapper .list-item-bullet {
+    background-color: black;
+}
+
+.experiences .list-wrapper .list-item .when {
+    color: rgba(0, 0, 0, .5);
+}
+
+.experiences .list-wrapper .list-item p {
+    color: rgba(0, 0, 0, .85);
 }

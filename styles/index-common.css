@@ -40,7 +40,8 @@
     width: auto
 }
 
-.docs-brand .docs-logo:focus, .docs-brand .docs-logo:hover {
+.docs-brand .docs-logo:focus,
+.docs-brand .docs-logo:hover {
     text-decoration: none
 }
 
@@ -124,6 +125,10 @@
     margin-bottom: .5rem;
 }
 
+.icons-frame {
+    margin-bottom: 1rem !important;
+}
+
 @media (max-width:375px) {
     .card-header {
         padding-top: .4rem !important;
@@ -134,15 +139,15 @@
     .grid-hero h2 {
         font-size: .9rem
     }
+
     .grid-hero .card {
         padding: 0
     }
+
     .mr-2 {
         margin-right: .6rem !important
     }
-    .icons-frame {
-        margin-bottom: 1rem !important;
-    }
+
     .card-body img {
         margin-bottom: .8rem;
     }
@@ -171,4 +176,83 @@
 .img-link {
     text-decoration: none !important;
     border-bottom: none !important;
+}
+
+.experiences .list-header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.experiences .list-header:not(:first-child) {
+    margin-top: 1.5rem;
+}
+
+.experiences .list-header .icon {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    margin-right: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.experiences .list-header h5 {
+    margin-bottom: 0 !important;
+}
+
+.experiences .list-wrapper {
+    display: block;
+    position: relative;
+}
+
+.experiences .list-wrapper .list-item {
+    display: flex;
+    position: relative;
+    margin-top: 1rem !important;
+    height: 100%;
+}
+
+.experiences .list-wrapper .list-line {
+    position: absolute;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    left: 22.5px;
+}
+
+.experiences .list-wrapper .list-item-bullet {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    margin-left: 16px;
+    flex: 0 0 auto;
+}
+
+.experiences .list-wrapper .list-item-content {
+    display: block;
+    margin-top: -.3rem;
+}
+
+.experiences .list-wrapper .list-item h6 {
+    display: inline-block;
+}
+
+.experiences .list-wrapper .list-item .when {
+    position: absolute;
+    right: 0;
+    display: inline;
+}
+
+.experiences .list-wrapper .list-item p {
+    display: block;
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .experiences .list-wrapper .list-item .when {
+        position: relative;
+        display: block;
+    }
 }
