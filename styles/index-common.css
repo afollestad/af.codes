@@ -196,10 +196,19 @@
 }
 
 .experiences .list-header .icon {
+    border-radius: 50%;
     display: inline-block;
     width: 48px;
     height: 48px;
     margin-right: 0.7rem;
+}
+
+.experiences .list-header .icon.no-rounding {
+    border-radius: 0 !important;
+}
+
+.experiences .list-header .empty-icon {
+    border-radius: 50%;
 }
 
 .experiences .list-header h5 {
