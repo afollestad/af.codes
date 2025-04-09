@@ -209,6 +209,10 @@
 
 .experiences .list-header .empty-icon {
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
 }
 
 .experiences .list-header h5 {
