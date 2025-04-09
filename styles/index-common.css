@@ -131,12 +131,14 @@
 
 .icons-frame {
     margin-bottom: 1rem !important;
+    padding-left: 12px;
 }
 
 @media (max-width:500px) {
     .card .card-header {
         padding-top: 0 !important;
     }
+
     .section-features {
         padding: 2rem 0.5rem !important;
     }
@@ -196,10 +198,9 @@
 }
 
 .experiences .list-header .icon {
-    border-radius: 50%;
     display: inline-block;
     width: 48px;
-    height: 48px;
+    height: auto;
     margin-right: 0.7rem;
 }
 
@@ -208,6 +209,8 @@
 }
 
 .experiences .list-header .empty-icon {
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -217,6 +220,7 @@
 
 .experiences .list-header h5 {
     margin-bottom: 0 !important;
+    margin-left: 8px !important;
 }
 
 .experiences .list-wrapper {
@@ -249,9 +253,22 @@
     flex: 0 0 auto;
 }
 
+.first-bullet {
+    background: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-radius: 0 !important;
+    border-left: 7px solid transparent !important;
+    border-right: 7px solid transparent !important;
+    border-bottom: 12px solid white !important;
+    position: relative !important;
+    top: -1px !important;
+}
+
 .experiences .list-wrapper .list-item-content {
     display: block;
     margin-top: -.3rem;
+    margin-left: 18px;
 }
 
 .experiences .list-wrapper .list-item h6 {
