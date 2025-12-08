@@ -292,3 +292,7 @@
         display: block;
     }
 }
+
+.img-open-modal {
+    border-radius: 16px;
+}
