@@ -293,6 +293,9 @@
     }
 }
 
-.img-open-modal {
+.portfolio-image {
     border-radius: 16px;
+    aspect-ratio: 3 / 2;
+    background-color: rgba(128, 128, 128, 0.1);
+    background-clip: content-box;
 }
