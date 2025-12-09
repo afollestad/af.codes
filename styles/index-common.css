@@ -299,3 +299,37 @@
     background-color: rgba(128, 128, 128, 0.1);
     background-clip: content-box;
 }
+
+#image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 400;
+}
+
+#image-modal.active {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#image-modal .btn-clear {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    border: none !important;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#image-modal a {
+    color: white !important;
+}
+
+#image-modal img {
+    max-height: 80%;
+}
