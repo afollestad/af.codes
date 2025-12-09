@@ -298,6 +298,7 @@
     aspect-ratio: 3 / 2;
     background-color: rgba(128, 128, 128, 0.1);
     background-clip: content-box;
+    cursor: pointer;
 }
 
 #image-modal {
@@ -314,7 +315,7 @@
 
 #image-modal.active {
     display: flex;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 #image-modal .btn-clear {
@@ -323,14 +324,17 @@
     top: 2rem;
     border: none !important;
     font-size: 1rem;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 #image-modal a {
     color: white !important;
 }
 
-#image-modal img {
+#image-modal-img {
+    border-radius: 16px;
+    aspect-ratio: 3 / 2;
     max-width: 90%;
     max-height: 80%;
+    background-color: rgba(0, 0, 0, 0.6);
 }
