@@ -3,6 +3,8 @@ const imageModalImg = document.getElementById("image-modal-img");
 const imageModalClose = document.getElementById("image-modal-close");
 const portfolioImages = document.getElementsByClassName("portfolio-image");
 
+imageModalImg.onload = () => imageModalImg.classList.add("loaded");
+
 function preventScroll(e) {
   if (imageModal.classList.contains("active")) {
     e.preventDefault();
@@ -29,6 +31,7 @@ function openModal() {
 function closeModal() {
   imageModal.classList.remove("active");
   removeScrollPrevention();
+  imageModalImg.classList.remove("loaded");
 }
 
 for (let i = 0; i < portfolioImages.length; i++) {
