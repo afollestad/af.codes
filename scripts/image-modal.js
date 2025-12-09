@@ -122,8 +122,14 @@ for (let i = 0; i < portfolioImages.length; i++) {
 }
 
 
-// Dismiss the modal when the 'X' button or esc key are pressed
+// Dismiss the modal when the 'X' button, esc key, or clicking outside the image
 imageModalClose.addEventListener("click", closeModal);
+imageModal.addEventListener("click", function(event) {
+  // Close only if clicking the modal background (not the image)
+  if (event.target === imageModal) {
+    closeModal();
+  }
+});
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     closeModal();
