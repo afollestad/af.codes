@@ -157,6 +157,10 @@
         margin-right: .6rem !important
     }
 
+    .card-body {
+        padding-top: .2rem !important;
+    }
+
     .card-body img {
         margin-bottom: .8rem;
     }
