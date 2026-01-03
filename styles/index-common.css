@@ -260,7 +260,7 @@
     border-radius: 0 !important;
     border-left: 7px solid transparent !important;
     border-right: 7px solid transparent !important;
-    border-bottom: 12px solid white !important;
+    border-bottom: 12px solid white;
     position: relative !important;
     top: -1px !important;
 }

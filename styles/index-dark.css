@@ -1,4 +1,4 @@
-/* light.css: 👉 dark-on-light */
+/* Dark on light */
 
 /** Don't forget to update theme-color in scripts/dark-mode.js if primary is changed. */
 :root {
@@ -112,4 +112,8 @@ a {
 
 .experiences .list-wrapper .list-item p {
     color: rgba(255, 255, 255, .85);
+}
+
+.first-bullet {
+    border-bottom: 12px solid white !important;
 }
