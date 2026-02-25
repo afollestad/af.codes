@@ -12,7 +12,7 @@ if (window.matchMedia('(prefers-color-scheme)').media === 'not all') {
 var themeColor = null;
 if (window.matchMedia('(prefers-color-scheme: dark)').matches == true) {
     // console.log('Dark mode is enabled.');
-    themeColor = '#1565c0';
+    themeColor = '#00279d';
 } else {
     // console.log('Dark mode is disabled.');
     themeColor = '#039be5';
