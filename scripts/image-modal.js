@@ -101,6 +101,30 @@ let pinchStartScale = 1;
 let lastMidX = 0;
 let lastMidY = 0;
 
+// --- Double-tap / double-click zoom ---
+
+let lastTapTime = 0;
+let lastTapX = 0;
+let lastTapY = 0;
+const DOUBLE_TAP_DELAY = 300;
+const DOUBLE_TAP_DISTANCE = 30;
+
+function handleDoubleZoom(x, y) {
+  if (isAnimating) return;
+  const newScale = zoomScale * 2;
+  if (newScale > MAX_ZOOM) {
+    resetZoom(true);
+  } else {
+    imageModalImg.style.transition = 'transform 0.3s ease-out';
+    setZoomAtPoint(newScale, x, y);
+  }
+}
+
+function handleDoubleClick(e) {
+  e.preventDefault();
+  handleDoubleZoom(e.clientX, e.clientY);
+}
+
 function cleanupDragListeners() {
   document.removeEventListener('mousemove', handleDragMove);
   document.removeEventListener('mouseup', handleDragEnd);
@@ -226,6 +250,23 @@ function handleDragEnd(e) {
 
   const deltaX = currentX - startX;
   const deltaY = currentY - startY;
+
+  if (e.type === 'touchend') {
+    const totalMove = Math.abs(deltaX) + Math.abs(deltaY);
+    if (totalMove < 10) {
+      const now = Date.now();
+      const timeDiff = now - lastTapTime;
+      const distDiff = Math.abs(currentX - lastTapX) + Math.abs(currentY - lastTapY);
+      lastTapTime = now;
+      lastTapX = currentX;
+      lastTapY = currentY;
+      if (timeDiff < DOUBLE_TAP_DELAY && distDiff < DOUBLE_TAP_DISTANCE) {
+        lastTapTime = 0;
+        handleDoubleZoom(currentX, currentY);
+        return;
+      }
+    }
+  }
 
   if (dragAxis === 'pan') {
     panX += deltaX;
@@ -396,6 +437,7 @@ function openModal() {
   addScrollPrevention();
   imageModalImg.addEventListener('mousedown', handleDragStart);
   imageModalImg.addEventListener('touchstart', handleDragStart);
+  imageModalImg.addEventListener('dblclick', handleDoubleClick);
 }
 
 function closeModal() {
@@ -408,6 +450,7 @@ function closeModal() {
   imageModalImg.style.transition = '';
   imageModalImg.removeEventListener('mousedown', handleDragStart);
   imageModalImg.removeEventListener('touchstart', handleDragStart);
+  imageModalImg.removeEventListener('dblclick', handleDoubleClick);
   isAnimating = false;
   isDragging = false;
   isPinching = false;
