@@ -304,6 +304,12 @@
     background-color: rgba(128, 128, 128, 0.1);
     background-clip: content-box;
     cursor: pointer;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    transition: filter 0.2s ease;
+}
+
+.portfolio-image:hover {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
 }
 
 #image-modal {
