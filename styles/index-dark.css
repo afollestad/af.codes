@@ -118,6 +118,12 @@ a {
     border-bottom: 12px solid white !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
+    .top-btn:hover {
+        color: var(--primary-color-lighter) !important;
+    }
+}
+
 .theme-toggle .icon-sun {
     display: block;
 }

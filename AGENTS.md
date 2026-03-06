@@ -6,7 +6,6 @@ Personal website for Aidan Follestad, hosted at [af.codes](https://af.codes).
 
 - **No build tools or JS frameworks** — plain HTML, CSS, and vanilla JavaScript.
 - **[Spectre.css](https://picturepan2.github.io/spectre/getting-started.html)** is the CSS framework. It provides the flexbox grid (`container`, `columns`, `column col-*`), utility classes (`bg-gray`, `bg-primary`, `text-center`, `text-light`, etc.), and component styles (`card`, `btn`, `btn-clear`). The minified bundle lives at `styles/spectre.min.css`.
-- **[moment.js](https://momentjs.com/docs/)** (with moment-timezone) is used for date/time manipulation. Currently it calculates the owner's age from a birth date in `scripts/index.js`. The libraries are vendored at `scripts/moment-with-locales.min.js` and `scripts/moment-timezone-with-data-1970-2030.min.js`.
 
 ## Project Structure
 
@@ -20,13 +19,16 @@ styles/
   index-light.css           — Light theme (CSS custom properties)
 scripts/
   dark-mode.js              — Theme toggle: system preference detection, localStorage persistence
-  index.js                  — Age calculation via moment.js
+  age.js                    — Age calculation from birth date (vanilla JS)
   image-modal.js            — Photo gallery modal (swipe, pinch-to-zoom, keyboard nav)
-  moment-with-locales.min.js          — moment.js (vendored, do not edit)
-  moment-timezone-with-data-1970-2030.min.js  — moment-timezone (vendored, do not edit)
+  scroll-to-gallery.js      — Smooth-scrolls to the "Recent shots" section on button click
 images/                     — Portfolio photos, company logos, social icons
 privacypolicies/            — Privacy policy pages for past Android apps
 ```
+
+## Top Action Buttons
+
+The theme toggle and scroll-to-gallery buttons share the `.top-actions` container (fixed top-right) and the `.top-btn` class for consistent sizing, opacity, and transitions. The container uses `position: fixed` globally but switches to `position: absolute` inside `.section-hero`. On hover, buttons shift to the theme's primary color (set in each theme CSS file); hover styles are gated behind `@media (hover: hover) and (pointer: fine)` to prevent sticky states on touch devices. `focus-visible` only increases opacity for keyboard accessibility. The theme toggle button also keeps the `.theme-toggle` class so the dark/light theme CSS can control sun/moon icon visibility.
 
 ## Theming
 

@@ -101,6 +101,17 @@ html {
     border-bottom: 12px solid black !important;
 }
 
+.top-btn {
+    color: #1a1a1a !important;
+    opacity: 0.85;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .top-btn:hover {
+        color: var(--primary-color) !important;
+    }
+}
+
 .theme-toggle .icon-sun {
     display: none;
 }
