@@ -100,3 +100,11 @@ html {
 .first-bullet {
     border-bottom: 12px solid black !important;
 }
+
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+.theme-toggle .icon-moon {
+    display: block;
+}

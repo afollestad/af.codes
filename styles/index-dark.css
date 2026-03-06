@@ -117,3 +117,11 @@ a {
 .first-bullet {
     border-bottom: 12px solid white !important;
 }
+
+.theme-toggle .icon-sun {
+    display: block;
+}
+
+.theme-toggle .icon-moon {
+    display: none;
+}

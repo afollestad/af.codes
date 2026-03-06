@@ -61,11 +61,48 @@
     margin-right: .3rem
 }
 
+.theme-toggle-brand {
+    height: 2rem;
+    right: 1.5rem;
+    position: fixed;
+    top: .85rem
+}
+
+.theme-toggle-brand .theme-toggle {
+    align-items: center;
+    background: none;
+    border: none;
+    border-radius: .1rem;
+    cursor: pointer;
+    display: inline-flex;
+    height: 2rem;
+    justify-content: center;
+    padding: .2rem;
+    width: 2rem;
+    color: inherit;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.theme-toggle-brand .theme-toggle:hover {
+    opacity: 1;
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+    display: none;
+}
+
 .section-hero {
     padding: 1rem .5rem
 }
 
 .section-hero .docs-brand {
+    position: absolute;
+    top: .85rem
+}
+
+.section-hero .theme-toggle-brand {
     position: absolute;
     top: .85rem
 }
