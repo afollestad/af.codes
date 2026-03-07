@@ -13,7 +13,7 @@ Personal website for Aidan Follestad, hosted at [af.codes](https://af.codes).
 index.html                  — Single-page site (hero, intro, experience timeline, photo gallery)
 CNAME                       — Custom domain config for GitHub Pages
 styles/
-  spectre.min.css           — Spectre.css framework (vendored, do not edit)
+  spectre.min.css           — Spectre.css framework (trimmed to only classes used by the site)
   index-common.css          — Theme-independent layout and component styles
   index-dark.css            — Dark theme (CSS custom properties)
   index-light.css           — Light theme (CSS custom properties)
@@ -28,7 +28,7 @@ privacypolicies/            — Privacy policy pages for past Android apps
 
 ## Top Action Buttons
 
-The theme toggle and scroll-to-gallery buttons share the `.top-actions` container (fixed top-right) and the `.top-btn` class for consistent sizing, opacity, and transitions. The container uses `position: fixed` globally but switches to `position: absolute` inside `.section-hero`. On hover, buttons shift to the theme's primary color (set in each theme CSS file); hover styles are gated behind `@media (hover: hover) and (pointer: fine)` to prevent sticky states on touch devices. `focus-visible` only increases opacity for keyboard accessibility. The theme toggle button also keeps the `.theme-toggle` class so the dark/light theme CSS can control sun/moon icon visibility.
+The theme toggle and scroll-to-gallery buttons share the `.top-actions` container (fixed top-right) and the `.top-btn` class for consistent sizing, opacity, and hover behavior. The container uses `position: fixed` globally but switches to `position: absolute` inside `.section-hero`.
 
 ## Theming
 
