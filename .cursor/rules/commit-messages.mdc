@@ -12,3 +12,7 @@ Co-authored-by: Claude <noreply@anthropic.com>
 ```
 
 Do NOT add this trailer when using non-Anthropic models (e.g. GPT, Gemini, etc.).
+
+# Outputting generated commit messages
+
+When creating git commits, tell me the message that you choose for the commit.
