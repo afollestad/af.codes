@@ -23,7 +23,6 @@ scripts/
   image-modal.js            — Photo gallery modal (swipe, pinch-to-zoom, keyboard nav)
   scroll-to-gallery.js      — Smooth-scrolls to the "Recent shots" section on button click
 images/                     — Portfolio photos, company logos, social icons
-privacypolicies/            — Privacy policy pages for past Android apps
 ```
 
 ## Top Action Buttons
