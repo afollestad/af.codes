@@ -21,6 +21,22 @@
     text-decoration: none
 }
 
+.bg-primary a:not(.btn):not(.icon),
+.bg-gray a:not(.btn):not(.docs-logo):not(.icon) {
+    display: inline-block;
+    vertical-align: baseline;
+    line-height: 1.15;
+    padding-bottom: .05rem;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .bg-primary a:not(.btn):not(.icon):hover,
+    .bg-gray a:not(.btn):not(.docs-logo):not(.icon):hover {
+        transform: scale(1.05);
+    }
+}
+
 .docs-brand {
     height: 2rem;
     left: 1.5rem;
