@@ -1,3 +1,4 @@
+(function () {
 const imageModal = document.getElementById("image-modal");
 const imageModalImg = document.getElementById("image-modal-img");
 const imageModalClose = document.getElementById("image-modal-close");
@@ -488,3 +489,4 @@ document.addEventListener('keydown', function (event) {
       break;
   }
 });
+})();
