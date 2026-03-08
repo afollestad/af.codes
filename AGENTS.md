@@ -35,10 +35,6 @@ Dark and light themes are controlled by two separate CSS files (`index-dark.css`
 
 When changing the primary color, update both the CSS custom property in the theme file **and** the hardcoded hex in `scripts/dark-mode.js` (`applyThemeColor`).
 
-## Hover & Interaction
-
-Hover-only effects (e.g. link raise, button highlight) must be wrapped in `@media (hover: hover) and (pointer: fine)` so they never fire on touch screens.
-
 ## Image Gallery
 
 Portfolio photos in `index.html` use `_thumbnail` suffixed filenames. The modal (`image-modal.js`) strips `_thumbnail` from the src to load the full-resolution image. It supports:

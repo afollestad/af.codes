@@ -12,3 +12,5 @@ Examples of changes that should trigger a review:
 - Changing the theming approach or CSS custom-property contract
 - Altering image-gallery behavior or naming conventions
 - Modifying the top-action-button pattern or layout strategy
+
+When adding things to AGENTS.md, first consider if it actually belongs in AGENTS.md or would more logically go in a rule.
