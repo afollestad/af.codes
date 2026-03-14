@@ -3,7 +3,7 @@ description: Add Claude co-author trailer to git commit messages
 alwaysApply: true
 ---
 
-# Commit Messages
+## Commit Messages
 
 When creating git commits and the active model is Claude (any variant from Anthropic), append this co-author trailer as the last line of the commit message body (after a blank line):
 
@@ -13,6 +13,6 @@ Co-authored-by: Claude <noreply@anthropic.com>
 
 Do NOT add this trailer when using non-Anthropic models (e.g. GPT, Gemini, etc.).
 
-# Outputting generated commit messages
+## Outputting generated commit messages
 
 When creating git commits, tell me the message that you choose for the commit.

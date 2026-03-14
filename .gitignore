@@ -53,3 +53,25 @@ Temporary Items
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos
+
+# AI Rules - Generated Files
+**/.agents/commands/*-ai-rules.md
+**/.agents/skills/ai-rules-generated-*
+**/.claude/commands/ai-rules/
+**/.claude/skills/ai-rules-generated-*
+**/.codex/skills/ai-rules-generated-*
+**/.cursor/commands/ai-rules/
+**/.cursor/mcp.json
+**/.cursor/rules/
+**/.cursor/skills/ai-rules-generated-*
+**/.firebender/skills/ai-rules-generated-*
+**/.gemini/settings.json
+**/.mcp.json
+**/.roo/mcp.json
+**/AGENTS.md
+**/CLAUDE.md
+**/GEMINI.md
+**/ai-rules/.generated-ai-rules
+**/firebender.json
+!**/ai-rules/AGENTS.md
+# End AI Rules

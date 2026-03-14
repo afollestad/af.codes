@@ -1,1 +1,1 @@
-AGENTS.md
+ai-rules/.generated-ai-rules/ai-rules-generated-AGENTS.md

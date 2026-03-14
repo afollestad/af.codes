@@ -1,10 +1,8 @@
 ---
 description: JavaScript formatting conventions for vanilla script files
-globs: scripts/*.js
+globs: ["scripts/*.js"]
 alwaysApply: false
 ---
-
-# Script Formatting
 
 Every file in `scripts/` must be wrapped in an IIFE to avoid polluting the global scope:
 

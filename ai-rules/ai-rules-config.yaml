@@ -1,0 +1,3 @@
+agents: [claude, cursor]
+nested_depth: 2
+gitignore: true
