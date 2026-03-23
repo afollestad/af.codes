@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aidan Follestad</title>
+    <link rel="stylesheet" href="styles/spectre.min.css">
+    <link rel="stylesheet" href="styles/index-common.css" />
+
+    <link rel="stylesheet" href="styles/index-dark.css" id="theme-dark" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="styles/index-light.css" id="theme-light"
+        media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
+
+    <script src="scripts/dark-mode.js" type="text/javascript"></script>
+
+    <link rel="icon" href="images/af.png">
+
+    <meta content="NVQFQ5d5DS2rzDg6k8UfFh00QtjcMVlSRC2jxEfMqdM" name="google-site-verification">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+
+    <meta property="og:title" content="Aidan Follestad's Site" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Aidan Follestad's personal website." />
+    <meta property="og:image" content="images/preview3.png" />
+    <meta property="og:image:width" content="2330" />
+    <meta property="og:image:height" content="952" />
+</head>
+
+<body>
+
+    <div class="section section-hero bg-gray">
+        <div class="grid-hero container grid-lg text-center" id="overview">
+            <div class="docs-brand">
+                <a class="docs-logo">
+                    <img src="images/af.png" alt="Aidan Follestad" class="circular">
+                    <!-- <h2>AIDAN FOLLESTAD</h2> -->
+                </a>
+            </div>
+            <div class="top-actions">
+                <button class="top-btn" id="scroll-to-experience" aria-label="Scroll to experience">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                </button>
+                <button class="top-btn" id="scroll-to-gallery" aria-label="Scroll to recent shots">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                        <circle cx="12" cy="13" r="4"/>
+                    </svg>
+                </button>
+                <button class="top-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+            </div>
+            <h1>AIDAN FOLLESTAD</h1>
+            <h2>
+                <u><span class="age">&nbsp;&nbsp;</span> years old</u>, <u>full stack software developer</u>,
+                <u>Staff (L6) Android Engineer @ Block</u>
+            </h2>
+            <div class="icons-frame">
+                <a class="mr-2 icon" href="https://github.com/afollestad" target="_blank">
+                    <img src="images/github.svg" alt="GitHub portfolio link" />
+                </a>
+                <a class="mr-2 icon" href="https://instagram.com/afollestad" target="_blank">
+                    <img src="images/instagram.svg" alt="Instagram portfolio link" />
+                </a>
+                <a class="mr-2 icon" href="https://www.linkedin.com/in/afollestad" target="_blank">
+                    <img src="images/linkedin.svg" alt="LinkedIn portfolio link" />
+                </a>
+            </div>
+            <div class="columns">
+                <div class="column col-4 col-xs-12">
+                    <div class="card text-center">
+                        <div class="card-header"><span class="card-title">Mobile</span></div>
+                        <div class="card-body">Kotlin &amp; Android. iOS on the side.</div>
+                    </div>
+                </div>
+                <div class="column col-4 col-xs-12">
+                    <div class="card text-center">
+                        <div class="card-header"><span class="card-title">Web</span></div>
+                        <div class="card-body">Classic HTML, CSS &amp; JavaScript.</div>
+                    </div>
+                </div>
+                <div class="column col-4 col-xs-12">
+                    <div class="card text-center">
+                        <div class="card-header"><span class="card-title">Backend</span></div>
+                        <div class="card-body">Kotlin &amp; some Node.js.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-features bg-primary text-light text-center">
+        <div class="container grid-lg">
+            <h2>Introduction</h2>
+            <div class="columns">
+                <div class="column col-10 col-sm-12 col-mx-auto text-left">
+                    <p class="text-secondary">
+                        I was born in St. Paul, Minnesota. I spent almost 6 years in the San Francisco Bay Area, but ended up back 
+                        in Minnesota. I'm currently a Staff (L6) Android Engineer at <a href="https://block.xyz" target="_blank">Block</a>.
+                    </p>
+                    <p class="text-secondary">
+                        I'm 100% self-taught; I started with C++ when I was 13 years old, moved into desktop apps,
+                        and then mobile apps when the first Android phones came out. I've also contributed heavily to
+                        <strong>open source</strong> over the years.
+                    </p>
+                    <p class="text-secondary">
+                        Outside of work, I'm into motorcycles &amp; cars, photography, snowboarding, and drums.
+                        Music taste ranges from rock, metal &amp; punk to EDM &amp; K-pop.
+                        Current loves: <em>2020 Triumph Street Triple RS 765 🏍️, 2025 Hyundai Ioniq 5 N 🏎️, Canon EOS R6 Mark III + Sony Alpha 7R V 📷.</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-features bg-gray text-light text-center" id="experience">
+        <div class="container grid-lg">
+            <h2>Experience</h2>
+            <div class="columns">
+                <div class="column col-10 col-sm-12 col-mx-auto text-left experiences">
+                    <div class="list-header">
+                        <img class="icon no-rounding" src="images/companies/block.png"
+                            alt="Block logo" style="padding: 4px;" />
+                        <h5>Block</h5>
+                    </div>
+                    <div class="list-wrapper">
+                        <div class="list-line"></div>
+                        <div class="list-item">
+                            <div class="list-item-bullet first-bullet"></div>
+                            <div class="list-item-content">
+                                <h6>Staff Android Engineer, Core Team</h6>
+                                <div class="when">Mar 2025 &mdash; Present</div>
+                                <p>Core engineer at Square (Block), working across Point of Sale and Cash App functionality while contributing to open source and foundational platform projects.</p>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item-bullet"></div>
+                            <div class="list-item-content">
+                                <h6>Staff Android Engineer, Ecommerce</h6>
+                                <div class="when">May 2024 &mdash; Mar 2025</div>
+                                <p>I worked on Square Websites in POS, and the Neighborhood Network in Cash App.</p>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item-bullet"></div>
+                            <div class="list-item-content">
+                                <h6>Staff Android Engineer, Conversations</h6>
+                                <div class="when">Jun 2021 &mdash; May 2025</div>
+                                <p>I worked primarily on the Square Messages product. Promoted to staff L6 on this team.</p>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item-bullet"></div>
+                            <div class="list-item-content">
+                                <h6>Senior Android Engineer, Personalization</h6>
+                                <div class="when">Sep 2020 &mdash; Jun 2021</div>
+                                <p>I built the new Point of Sale checkout experience on Android. Promoted to senior L5 on this team.</p>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <span class="list-item-bullet"></span>
+                            <div class="list-item-content">
+                                <h6>Android Engineer, Device Experience</h6>
+                                <div class="when">Mar 2018 &mdash; Sep 2020</div>
+                                <p>I worked on the user-facing software that runs on Square Register and Square
+                                    Terminal, helping to bring them to market.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list-header">
+                        <img class="icon" src="images/companies/target.png" alt="Target logo" />
+                        <h5>Target</h5>
+                    </div>
+                    <div class="list-wrapper">
+                        <div class="list-line"></div>
+                        <div class="list-item">
+                            <div class="list-item-bullet first-bullet"></div>
+                            <div class="list-item-content">
+                                <h6>Android Engineer</h6>
+                                <div class="when">Nov 2016 &mdash; Mar 2018</div>
+                                <p>I worked on the flagship app before &amp; after it was merged with Cartwheel (now
+                                    called Circle). I also led implementation of in-store app payments (via barcode).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list-header">
+                        <img class="icon no-rounding" src="images/companies/skillfitness.webp"
+                            alt="SkillFitness logo" />
+                        <h5>SkillFitness</h5>
+                    </div>
+                    <div class="list-wrapper">
+                        <div class="list-line"></div>
+                        <div class="list-item">
+                            <span class="list-item-bullet first-bullet"></span>
+                            <div class="list-item-content">
+                                <h6>Mobile Solutions Developer</h6>
+                                <div class="when">Jul 2015 &mdash; Nov 2016</div>
+                                <p>I did Android, iOS, and backend work for a professional training CRM platform.</p>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item-bullet"></div>
+                            <div class="list-item-content">
+                                <h6>Android Development Consultant</h6>
+                                <div class="when">Jun 2015 &mdash; Jul 2015</div>
+                                <p>I brought SkillFitness into the world of Android.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list-header">
+                        <div class="icon empty-icon">&#x1f937;&#x200d;&#x2642;&#xfe0f;</div>
+                        <h5>Ricco Solutions</h5>
+                    </div>
+                    <div class="list-wrapper">
+                        <div class="list-line"></div>
+                        <div class="list-item">
+                            <span class="list-item-bullet first-bullet"></span>
+                            <div class="list-item-content">
+                                <h6>Lead Mobile Engineer</h6>
+                                <div class="when">May 2013 &mdash; May 2015</div>
+                                <p>I developed Android and iOS mobile applications using Java &amp; Objective-C. This was
+                                    my first step into using my skills professionally (as an intern).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-features bg-primary text-light text-center" id="recent-shots">
+        <div class="container grid-lg">
+            <h2>Recent shots</h2>
+            <div class="columns">
+                <img
+                    src="images/portfolio/willowriver_tree_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/willowriver_bridge_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/willowriver_falls2_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/willriver_falls_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/lake_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/icerocks_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/train_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/tracks_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/sculpture_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/downthestreet_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/goldmedalpark_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/goldmedalflour_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/stillwaterbridge_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/whiteflower_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/purpleflower_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/ceiling_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/fountain_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/starlight_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/moon_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/light_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/snow2_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/snow_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/mpls2_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/table_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/building_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/stpaul_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/cieling_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/bridge_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/car_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/mpls_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/depot_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+
+                <img
+                    src="images/portfolio/field_thumbnail.jpg"
+                    loading="lazy"
+                    decoding="async"
+                    class="column col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-3 portfolio-image" />
+            </div>
+        </div>
+    </div>
+
+    <div id="image-modal">
+        <a id="image-modal-close" class="btn btn-clear" aria-label="Close"></a>
+        <img id="image-modal-img" src="" draggable="false" />
+    </div>
+
+    <script src="./scripts/age.js" type="text/javascript"></script>
+    <script src="./scripts/image-modal.js" type="text/javascript"></script>
+    <script src="./scripts/scroll-to-gallery.js" type="text/javascript"></script>
+    <script src="./scripts/scroll-to-experience.js" type="text/javascript"></script>
+
+</body>
+
+</html>
