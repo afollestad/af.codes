@@ -1,0 +1,125 @@
+/* Light on dark */
+
+/** Don't forget to update theme-color in scripts/dark-mode.js if primary is changed. */
+:root {
+    --primary-text-color: #3b4351;
+    --secondary-text-color: #455060;
+    --primary-text-on-primary-color: #FFFFFF;
+    --secondary-text-on-primary-color: #e5e5f9;
+    --theme-background-color: #FFFFFF;
+    --primary-color: #0288d1;
+    --secondary-color: #005b9f;
+}
+
+html {
+    background: var(--primary-color) !important;
+}
+
+.raised {
+    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.2), 0 3px 6px rgba(255, 255, 255, 0.3);
+}
+
+.btn {
+    border: .05rem solid var(--secondary-color) !important;
+    color: var(--secondary-color) !important;
+}
+.btn.btn-primary {
+    color: var(--primary-text-color) !important;
+    background: var(--primary-color) !important;
+}
+
+.bg-gray a:not(.btn):not(.docs-logo), a {
+    color: var(--primary-text-color) !important;
+}
+.bg-gray .card .card-title {
+    color: var(--primary-color) !important;
+}
+.bg-gray .text-secondary, .card {
+    color: var(--secondary-text-color) !important;
+}
+
+.bg-primary {
+    color: var(--primary-text-color) !important;
+    background: var(--primary-color) !important;
+}
+.bg-primary .card {
+    color: var(--secondary-text-on-primary-color) !important;
+}
+.bg-primary .card .card-title {
+    color: var(--primary-text-color) !important;
+}
+
+.docs-brand {
+    color: var(--primary-color) !important;
+}
+
+.section-hero .docs-brand h2 {
+    color: var(--primary-color) !important;
+}
+
+.section-features.bg-gray h2 {
+    color: var(--primary-text-color) !important;
+}
+
+.grid-hero h1 {
+    color: var(--primary-text-color) !important;
+}
+
+.grid-hero h2 {
+    color: var(--secondary-text-color) !important;
+}
+
+.experiences .list-header .empty-icon {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.experiences .list-header h5 {
+    color: var(--primary-text-color) !important;
+}
+
+.experiences .list-wrapper .list-item h6 {
+    color: var(--primary-text-color) !important;
+}
+
+.experiences .list-wrapper .list-line {
+    background-color: black;
+}
+
+.experiences .list-wrapper:last-child .list-line {
+    background: linear-gradient(to bottom, black, transparent);
+}
+
+.experiences .list-wrapper .list-item-bullet {
+    background-color: black;
+}
+
+.experiences .list-wrapper .list-item .when {
+    color: rgba(0, 0, 0, .5);
+}
+
+.experiences .list-wrapper .list-item p {
+    color: rgba(0, 0, 0, .85);
+}
+
+.first-bullet {
+    border-bottom: 12px solid black !important;
+}
+
+.top-btn {
+    color: #1a1a1a !important;
+    opacity: 0.85;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .top-btn:hover {
+        color: var(--primary-color) !important;
+    }
+}
+
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+.theme-toggle .icon-moon {
+    display: block;
+}

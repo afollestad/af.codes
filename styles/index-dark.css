@@ -1,0 +1,137 @@
+/* Dark on light */
+
+/** Don't forget to update theme-color in scripts/dark-mode.js if primary is changed. */
+:root {
+    --primary-text-color: rgb(250, 250, 250);
+    --secondary-text-color: rgba(255, 255, 255, 0.9);
+    --primary-text-on-primary-color: #FFFFFF;
+    --secondary-text-on-primary-color: #e5e5f9;
+    --theme-background-color: #121212;
+    --primary-color: #001a69;
+    --primary-color-lighter: #8aaeff;
+    --secondary-color: #002491;
+}
+
+html {
+    background: var(--primary-color) !important;
+}
+
+.bg-gray {
+    color: var(--primary-text-color) !important;
+    background: var(--theme-background-color) !important;
+}
+
+.raised {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.btn {
+    border: .05rem solid var(--secondary-color) !important;
+    color: var(--secondary-color) !important;
+}
+
+.btn.btn-primary {
+    color: var(--primary-text-color) !important;
+    background: var(--primary-color) !important;
+}
+
+.bg-gray a:not(.btn):not(.docs-logo),
+a {
+    color: var(--primary-text-color) !important;
+}
+
+.bg-gray .card .card-title {
+    color: var(--primary-color-lighter) !important;
+}
+
+.bg-gray .text-secondary,
+.card {
+    color: var(--secondary-text-color) !important;
+}
+
+.bg-primary {
+    color: var(--primary-text-color) !important;
+    background: var(--primary-color) !important;
+}
+
+.bg-primary .card {
+    color: var(--secondary-text-on-primary-color) !important;
+}
+
+.bg-primary .card .card-title {
+    color: var(--primary-text-color) !important;
+}
+
+.docs-brand {
+    color: var(--primary-color) !important;
+}
+
+.section-hero .docs-brand h2 {
+    color: var(--primary-color-lighter) !important;
+}
+
+.section-features.bg-gray h2 {
+    color: var(--primary-text-color) !important;
+}
+
+.grid-hero h1 {
+    color: var(--primary-text-color) !important;
+}
+
+.grid-hero h2 {
+    color: var(--secondary-text-color) !important;
+}
+
+.icon img {
+    filter: invert(1);
+}
+
+.experiences .list-header .empty-icon {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.experiences .list-header h5 {
+    color: var(--primary-text-color) !important;
+}
+
+.experiences .list-wrapper .list-item h6 {
+    color: var(--primary-text-color) !important;
+}
+
+.experiences .list-wrapper .list-line {
+    background-color: white;
+}
+
+.experiences .list-wrapper:last-child .list-line {
+    background: linear-gradient(to bottom, white, transparent);
+}
+
+.experiences .list-wrapper .list-item-bullet {
+    background-color: white;
+}
+
+.experiences .list-wrapper .list-item .when {
+    color: rgba(255, 255, 255, .6);
+}
+
+.experiences .list-wrapper .list-item p {
+    color: rgba(255, 255, 255, .85);
+}
+
+.first-bullet {
+    border-bottom: 12px solid white !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .top-btn:hover {
+        color: var(--primary-color-lighter) !important;
+    }
+}
+
+.theme-toggle .icon-sun {
+    display: block;
+}
+
+.theme-toggle .icon-moon {
+    display: none;
+}

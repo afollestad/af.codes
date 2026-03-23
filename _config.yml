@@ -1,0 +1,3 @@
+exclude:
+  - ai-rules/
+  - "**/*.md"
