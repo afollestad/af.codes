@@ -1,3 +1,4 @@
 exclude:
   - ai-rules/
   - "**/*.md"
+  - ".alveary.json"

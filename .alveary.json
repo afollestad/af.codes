@@ -1,0 +1,9 @@
+{
+  "actions" : [
+    {
+      "command" : "open index.html",
+      "icon" : "safari",
+      "name" : "Open"
+    }
+  ]
+}
