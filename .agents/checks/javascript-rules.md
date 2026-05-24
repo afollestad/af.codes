@@ -1,7 +1,7 @@
 ---
+name: javascript-rules
 description: JavaScript formatting conventions for vanilla script files
 globs: ["scripts/*.js"]
-alwaysApply: false
 ---
 
 Every file in `scripts/` must be wrapped in an IIFE to avoid polluting the global scope:

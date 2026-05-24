@@ -1,4 +1,6 @@
 exclude:
-  - ai-rules/
+  - .agents/
+  - .codex/
+  - .claude/
   - "**/*.md"
   - ".alveary.json"
