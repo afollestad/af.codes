@@ -40,5 +40,6 @@ scripts/
   image-modal.js            — Photo gallery modal (swipe, pinch-to-zoom, keyboard nav)
   scroll-to-gallery.js      — Smooth-scrolls to the "Recent shots" section on button click
   scroll-to-experience.js   — Smooth-scrolls to the "Experience" section on button click
+  overview-return.js        — Floating bottom-right button that appears on scroll and smooth-scrolls to top (named to avoid ad-block "back to top" cosmetic filters)
 images/                     — Portfolio photos, company logos, social icons
 ```

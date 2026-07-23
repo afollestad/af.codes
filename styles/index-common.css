@@ -118,6 +118,46 @@
     display: none;
 }
 
+/* Do NOT rename this to a generic "back to top" name (jump-to-top, back-to-top,
+   scroll-to-top): ad-block cosmetic filters hide those id/class names, which
+   makes the button vanish in browsers with a content blocker. */
+.overview-return {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    color: #ffffff;
+    background: rgba(22, 24, 32, 0.5);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    backdrop-filter: blur(12px) saturate(160%);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.5rem);
+    transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), visibility 0.25s ease;
+    z-index: 300;
+}
+
+.overview-return.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .overview-return.visible:hover {
+        transform: translateY(0) scale(1.05);
+    }
+}
+
 .section-hero {
     padding: 1rem .5rem
 }
