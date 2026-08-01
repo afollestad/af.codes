@@ -28,8 +28,14 @@ _BUNDLED_FONTS = sorted(
 )
 FONT_PATH = os.path.join(_SKILL_DIR, _BUNDLED_FONTS[0]) if _BUNDLED_FONTS else None
 
-# Images that are mostly dark — use reduced opacity so the white text isn't jarring
-DARK_IMAGES = {"moon.jpg", "moon_thumbnail.jpg"}
+# Images whose bottom-right corner — where the signature lands — is near-black.
+# Reduced opacity keeps the white text from standing out too harshly there.
+# Judge by that corner alone: a night shot with a lit bottom-right reads fine at 50%.
+DARK_IMAGES = {
+    "moon.jpg", "moon_thumbnail.jpg",
+    "lanternpeacock.jpg", "lanternpeacock_thumbnail.jpg",
+    "lanternbutterfly.jpg", "lanternbutterfly_thumbnail.jpg",
+}
 DEFAULT_OPACITY = 0.50
 DARK_OPACITY = 0.30
 
