@@ -27,6 +27,7 @@ Examples of changes that should trigger a review:
 
 ```
 index.html                  — Single-page site (hero, intro, experience timeline, photo gallery)
+favicon.png                 — 96x96 browser favicon derived from `images/af.png`
 CNAME                       — Custom domain config for GitHub Pages
 _config.yml                 — Jekyll config that excludes agent tooling directories and all Markdown from GitHub Pages builds
 .agents/
