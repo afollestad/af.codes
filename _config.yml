@@ -1,0 +1,7 @@
+exclude:
+  - .agents/
+  - .codex/
+  - .claude/
+  - .github/
+  - "**/*.md"
+  - ".alveary.json"
