@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chromahora Privacy Policy</title>
+<meta name="description" content="How Chromahora handles your location and data.">
+<style>
+  :root {
+    --bg: #fbf8f3;
+    --surface: #ffffff;
+    --text: #1d1b19;
+    --muted: #5e5852;
+    --rule: #e8e1d6;
+    --accent: #b8560f;
+    --accent-2: #2f4fa8;
+    --callout: #fff4e3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1220;
+      --surface: #171b2e;
+      --text: #ece8e1;
+      --muted: #a8a29a;
+      --rule: #2a3050;
+      --accent: #f2a65a;
+      --accent-2: #8fa8ff;
+      --callout: #1f2440;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  .band {
+    height: 6px;
+    background: linear-gradient(90deg, #1b2a6b, #3f5fc4 30%, #f0a04b 65%, #f7d36b);
+  }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 20px 64px;
+  }
+  header { margin-bottom: 32px; }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .meta { color: var(--muted); margin: 0; font-size: 0.95rem; }
+  h2 {
+    font-size: 1.2rem;
+    margin: 40px 0 8px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  p, ul { margin: 0 0 14px; }
+  ul { padding-left: 1.25em; }
+  li { margin-bottom: 8px; }
+  a { color: var(--accent-2); text-underline-offset: 2px; }
+  strong { font-weight: 600; }
+  .summary {
+    background: var(--callout);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 0 0 8px;
+  }
+  .summary p:last-child, .summary ul:last-child { margin-bottom: 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 16px;
+    font-size: 0.95rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  th, td {
+    text-align: left;
+    vertical-align: top;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  tr:last-child td { border-bottom: 0; }
+  th { color: var(--muted); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 0.9rem; }
+  @media (max-width: 520px) {
+    body { font-size: 16px; }
+    main { padding: 32px 16px 48px; }
+    h1 { font-size: 1.6rem; }
+    table, thead, tbody, tr, th, td { display: block; }
+    thead { display: none; }
+    tr { border-bottom: 1px solid var(--rule); padding: 6px 0; }
+    tr:last-child { border-bottom: 0; }
+    td { border-bottom: 0; padding: 4px 12px; }
+    td::before {
+      content: attr(data-label);
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="band" aria-hidden="true"></div>
+<main>
+  <header>
+    <h1>Chromahora Privacy Policy</h1>
+    <p class="meta">Effective September 28, 2026</p>
+  </header>
+
+  <div class="summary">
+    <p><strong>The short version:</strong></p>
+    <ul>
+      <li>Chromahora has no accounts, analytics, ads or tracking, and the developer never receives any data about you.</li>
+      <li>To work out sun times and weather where you are, it sends an approximate location, rounded to about 11 km (7 miles), to two services: sunrise-sunset.org and Apple Weather.</li>
+      <li>Everything the app keeps stays on your device, and deleting the app removes it.</li>
+    </ul>
+  </div>
+
+  <h2>Who we are</h2>
+  <p>Chromahora is an iOS app by Aidan Follestad (“we”, “us”). It shows photographers when blue hour and golden hour happen on a given day. This policy explains what information the app uses, where it goes, and the choices you have.</p>
+
+  <h2>Location</h2>
+  <p>Chromahora asks for permission to use your location <strong>only while you’re using the app</strong>, and asks for <strong>approximate</strong> location by default. You can change this at any time in Settings › Privacy &amp; Security › Location Services › Chromahora.</p>
+  <ul>
+    <li><strong>Rounded before it’s used.</strong> Whether iOS gives the app an approximate or a precise location, Chromahora rounds it to the nearest tenth of a degree, about 11 km (7 miles), before storing it or sending it anywhere. Your precise location never leaves your device.</li>
+    <li><strong>Without permission.</strong> If you don’t allow location access, Chromahora estimates your area from your device’s time zone setting instead, using a reference city for that zone that is built into the app. This involves no location access at all.</li>
+    <li><strong>Never in the background.</strong> The app doesn’t track your location over time. It only checks where you are when you open it or come back to it.</li>
+  </ul>
+
+  <h2>Services the app contacts</h2>
+  <p>To show sun times and weather, Chromahora sends requests directly from your device to the two services below, over encrypted HTTPS connections. We don’t run any servers, so none of this passes through us.</p>
+  <table>
+    <thead>
+      <tr><th>Service</th><th>What it’s sent</th><th>Why</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Service"><a href="https://sunrise-sunset.org">sunrise-sunset.org</a></td>
+        <td data-label="What it’s sent">Your rounded location, a range of dates, and your device’s time zone</td>
+        <td data-label="Why">Sunrise, sunset, golden hour and blue hour times</td>
+      </tr>
+      <tr>
+        <td data-label="Service">Apple Weather (WeatherKit)</td>
+        <td data-label="What it’s sent">Your rounded location and a range of dates</td>
+        <td data-label="Why">Hourly forecasts of clouds, fog, rain and snow</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Like any website or online service, these services can see your device’s IP address when the app contacts them. Their own privacy policies govern how they handle requests: see <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a> for Apple Weather, and <a href="https://sunrise-sunset.org">sunrise-sunset.org</a> for theirs. Neither service receives your name, contact details, or any identifier from the app.</p>
+
+  <h2>What’s stored on your device</h2>
+  <p>Chromahora keeps a small amount of data on your device so it can open quickly and work offline:</p>
+  <ul>
+    <li><strong>Your last rounded location</strong> and the time zone it was found in, so the app can show your area at once the next time you open it.</li>
+    <li><strong>Sun times</strong> for the months you’ve viewed. Months older than last month are deleted automatically.</li>
+    <li><strong>The most recent weather forecast</strong>, which replaces the previous one each time the app fetches a new one.</li>
+  </ul>
+  <p>This data isn’t synced, backed up to our servers, or shared with anyone. Deleting Chromahora removes all of it.</p>
+
+  <h2>What we don’t do</h2>
+  <ul>
+    <li>We don’t collect, receive or store any of your data on our own servers.</li>
+    <li>We don’t use analytics, advertising, crash-reporting or tracking tools, and the app contains no third-party SDKs.</li>
+    <li>We don’t track you across other companies’ apps or websites, and we don’t sell or share your information.</li>
+    <li>The app has no accounts and never asks for your name, email address or other contact details.</li>
+  </ul>
+  <p>If you choose to share diagnostics with app developers in your device’s settings, Apple may provide us with anonymous crash reports and usage statistics. Apple controls that sharing, and you can turn it off in Settings › Privacy &amp; Security › Analytics &amp; Improvements.</p>
+
+  <h2>Children</h2>
+  <p>Chromahora isn’t directed at children, and it doesn’t knowingly collect personal information from anyone, including children.</p>
+
+  <h2>Open source</h2>
+  <p>Chromahora’s source code is public on <a href="https://github.com/afollestad/Chromahora">GitHub</a>, so you can check for yourself exactly what the app does with your data.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If the way Chromahora handles data changes, we’ll update this page and its effective date before the change reaches the app.</p>
+
+  <h2>Contact</h2>
+  <p>If you have questions about this policy, email <a href="mailto:saffron_bond_1r@icloud.com">saffron_bond_1r@icloud.com</a> or open an issue on <a href="https://github.com/afollestad/Chromahora/issues">GitHub</a>.</p>
+
+  <footer>© 2026 Aidan Follestad</footer>
+</main>
+</body>
+</html>
