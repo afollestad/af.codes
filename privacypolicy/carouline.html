@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Carouline Privacy Policy</title>
+<meta name="description" content="How Carouline handles your photos, projects, permissions, and data.">
+<style>
+  :root {
+    --bg: #faf8ff;
+    --surface: #ffffff;
+    --text: #241c35;
+    --muted: #62596f;
+    --rule: #e4ddef;
+    --accent: #7957e7;
+    --link: #5c3bb8;
+    --callout: #eaf8f0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14101e;
+      --surface: #1e172c;
+      --text: #f1edf8;
+      --muted: #b8aecb;
+      --rule: #3a2e4e;
+      --accent: #b99aff;
+      --link: #bdf3d6;
+      --callout: #1b2b26;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  .band {
+    height: 6px;
+    background: linear-gradient(90deg, #5c45d4, #7957e7 35%, #b687f3 65%, #d2ffe4);
+  }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 20px 64px;
+  }
+  header { margin-bottom: 32px; }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .meta { color: var(--muted); margin: 0; font-size: 0.95rem; }
+  h2 {
+    font-size: 1.2rem;
+    margin: 40px 0 8px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  p, ul { margin: 0 0 14px; }
+  ul { padding-left: 1.25em; }
+  li { margin-bottom: 8px; }
+  a { color: var(--link); text-underline-offset: 2px; overflow-wrap: anywhere; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  strong { font-weight: 600; }
+  .summary {
+    background: var(--callout);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 0 0 8px;
+  }
+  .summary p:last-child, .summary ul:last-child { margin-bottom: 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 16px;
+    font-size: 0.95rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+  }
+  th, td {
+    text-align: left;
+    vertical-align: top;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  tr:last-child td { border-bottom: 0; }
+  th { color: var(--muted); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  td:first-child { width: 28%; font-weight: 600; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 0.9rem; }
+  @media (max-width: 520px) {
+    body { font-size: 16px; }
+    main { padding: 32px 16px 48px; }
+    h1 { font-size: 1.6rem; }
+    th, td { padding: 9px 10px; }
+    td:first-child { width: 30%; }
+  }
+</style>
+</head>
+<body>
+<div class="band" aria-hidden="true"></div>
+<main>
+  <header>
+    <h1>Carouline Privacy Policy</h1>
+    <p class="meta">Effective <time datetime="2026-10-14">October 14, 2026</time></p>
+  </header>
+
+  <div class="summary">
+    <p><strong>The short version:</strong></p>
+    <ul>
+      <li>Your photos, collages, panoramas, and text are edited and rendered on your device. We don’t upload your projects or images to our servers.</li>
+      <li>Carouline has no accounts, ads, tracking, or built-in analytics, and we don’t run an app backend.</li>
+      <li>You choose which images to import, whether to use the camera, and when to save or share your finished slides.</li>
+      <li>Apple’s photo services, device backups, and optional diagnostic sharing can still apply, as described below.</li>
+    </ul>
+  </div>
+
+  <h2>Who we are</h2>
+  <p>Carouline is an iOS app by Aidan Follestad (“we”, “us”) for creating photo collages and carousels. It lets you arrange photos in layouts, spread a panorama across slides, add image and text layers, and export the results. This policy explains what the app uses, where information goes, and the choices you have.</p>
+
+  <h2>Photos and camera permissions</h2>
+  <p>Carouline uses Apple’s system photo picker to import images. The picker gives the app the images you select; choosing images this way doesn’t grant access to your entire photo library. Carouline makes its own local copies so you can continue editing your projects.</p>
+  <p>The app requests additional permissions only for the features below:</p>
+  <table aria-label="Photos and camera permissions">
+    <thead>
+      <tr><th scope="col">Permission</th><th scope="col">When it’s used</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Camera</td>
+        <td>When you choose to take a photo for a slide. The capture is added to your project; it isn’t automatically saved to Photos.</td>
+      </tr>
+      <tr>
+        <td>Add to Photos</td>
+        <td>When you choose Save to Photos to save exported slides. Permission to add images alone doesn’t let the app read your library.</td>
+      </tr>
+      <tr>
+        <td>Photo library access</td>
+        <td>To recover a project image if its local copy becomes unavailable. The app uses the original photo’s library identifier. It can try recovery automatically if you’ve already allowed access; otherwise, it asks when you choose to restore the image. You can grant access to selected photos rather than your entire library.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>You can change camera and Photos permissions in your device’s Settings app. Denying a permission prevents the feature that needs it from working. Revoking Photos access doesn’t delete copies you’ve already imported into a project.</p>
+  <p>Carouline doesn’t request access to your location, contacts, or microphone.</p>
+
+  <h2>What’s stored on your device</h2>
+  <p>Carouline stores your work in its private app storage, protected by iOS:</p>
+  <ul>
+    <li><strong>Your projects:</strong> names, creation and modification dates, slide order and shapes, photo layouts, crop and style settings, and image and text layers.</li>
+    <li><strong>Image copies:</strong> the photos and images used in your projects, along with their sizes and, when available, the Photos library identifiers used to recover missing copies.</li>
+    <li><strong>Temporary files:</strong> images being imported and files prepared for saving or sharing. Leftover import and export files are cleared when the app next starts.</li>
+    <li><strong>Introductory tip state:</strong> Apple’s TipKit remembers which guidance you’ve seen. The app also remembers whether its starter project has been added.</li>
+  </ul>
+  <p>Editing, image processing, and rendering happen on your device. Carouline doesn’t provide its own cloud storage or project synchronization service.</p>
+
+  <h2>Saving and sharing</h2>
+  <p>When you save slides to Photos, Carouline adds the exported images to your photo library. When you use Share, iOS passes the exported image files to the destination you choose, such as another app, AirDrop, or Files. Exported filenames include the project’s name.</p>
+  <p>The recipient app or service handles those files under its own privacy policy. Sharing with a social media or cloud service may upload them to that service. Carouline doesn’t publish your projects or send them to other apps automatically.</p>
+
+  <h2>Apple services and backups</h2>
+  <p>If an image you select or restore is stored in iCloud Photos, Apple’s photo services may download it to your device. Images you save to Photos may also sync through iCloud Photos if you’ve enabled it.</p>
+  <p>Your device’s iCloud or computer backups may include Carouline’s local project data. These backups are separate from an app-operated cloud service and are controlled by your device and backup settings. See <a href="https://support.apple.com/en-us/108770">what iCloud Backup includes</a> and <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a> for more information.</p>
+
+  <h2>Collection, analytics, and tracking</h2>
+  <ul>
+    <li>We don’t collect your photos, project content, or usage activity through an app backend.</li>
+    <li>The app includes no third-party analytics, advertising, crash-reporting, or tracking SDKs.</li>
+    <li>We don’t sell your information or track you across other companies’ apps or websites.</li>
+    <li>Carouline has no accounts and doesn’t ask for your name, email address, or other contact details to use the app.</li>
+  </ul>
+  <p>If you choose to share diagnostics with app developers in your device’s settings, Apple may provide us with crash reports and usage statistics. Apple controls that sharing, and you can turn off Share With App Developers in Settings › Privacy &amp; Security › Analytics &amp; Improvements. See <a href="https://www.apple.com/legal/privacy/data/en/app-analytics/">Apple’s App Analytics &amp; Privacy information</a>.</p>
+
+  <h2>Deleting your data</h2>
+  <p>Your projects remain in Carouline until you delete them. Deleting a project removes its saved content and stored source-image copies. Temporary import and export files are cleared as described above. Deleting the app, rather than offloading it, removes its local app data.</p>
+  <p>Deleting an original image from Photos doesn’t remove a copy already imported into Carouline. Likewise, deleting a project or the app doesn’t delete originals or exports in Photos, files you’ve shared elsewhere, or copies in existing device backups. Manage those separately in Photos, the destination app or service, or your backup settings.</p>
+
+  <h2>Children</h2>
+  <p>Carouline doesn’t knowingly collect personal information from children through the app.</p>
+
+  <h2>Open source</h2>
+  <p>Carouline’s source code is public on <a href="https://github.com/afollestad/Carouline">GitHub</a>, so you can inspect how the app handles your data.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If the way Carouline handles data changes, we’ll update this page and its effective date before the change reaches the app.</p>
+
+  <h2>Contact</h2>
+  <p>If you have questions about this policy, email <a href="mailto:saffron_bond_1r@icloud.com">saffron_bond_1r@icloud.com</a> or open an issue on <a href="https://github.com/afollestad/Carouline/issues">GitHub</a>.</p>
+  <p>If you contact us, we receive the information you choose to include and use it to respond to your request. GitHub issues are public, so only include information you want to make public.</p>
+
+  <footer>© 2026 Aidan Follestad</footer>
+</main>
+</body>
+</html>
