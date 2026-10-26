@@ -70,6 +70,9 @@ When adding photos:
 
 - Downscale to the sizes above with `sips --resampleWidth` (no ImageMagick in this project). Sources
   are 3:2, matching both targets, so nothing is cropped.
+- Convert any non-sRGB source (check with `sips -g profile`) to sRGB first with `sips --matchTo
+  "/System/Library/ColorSync/Profiles/sRGB Profile.icc"`. The watermark script re-saves without an
+  ICC profile, so browsers read the pixels as sRGB and wide-gamut colors would come out dull.
 - Sign every new file with the `watermark-portfolio-images` skill before committing — it applies the
   signature and writes the `Artist` / `Copyright` EXIF fields. Invoke it with `--file <name>` per
   image so a directory-wide run can't re-sign existing photos.

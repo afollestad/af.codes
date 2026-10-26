@@ -34,6 +34,9 @@ FONT_PATH = os.path.join(_SKILL_DIR, _BUNDLED_FONTS[0]) if _BUNDLED_FONTS else N
 DARK_IMAGES = {
     "moon.jpg", "moon_thumbnail.jpg",
     "lanternbutterfly.jpg", "lanternbutterfly_thumbnail.jpg",
+    "spaceneedle.jpg", "spaceneedle_thumbnail.jpg",
+    "neonwhaletail.jpg", "neonwhaletail_thumbnail.jpg",
+    "splashpad.jpg", "splashpad_thumbnail.jpg",
 }
 DEFAULT_OPACITY = 0.50
 DARK_OPACITY = 0.30
