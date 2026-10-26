@@ -26,7 +26,7 @@ Examples of changes that should trigger a review:
 ## Project Structure
 
 ```
-index.html                  — Single-page site (hero, intro, experience timeline, photo gallery)
+index.html                  — Single-page site (hero, intro, experience timeline, photo gallery, apps)
 favicon.png                 — 96x96 browser favicon derived from `images/af.png`
 CNAME                       — Custom domain config for GitHub Pages
 _config.yml                 — Jekyll config that excludes agent tooling directories and all Markdown from GitHub Pages builds
@@ -40,15 +40,41 @@ styles/
   index-dark.css            — Dark theme (CSS custom properties)
   index-light.css           — Light theme (CSS custom properties)
 scripts/
-  dark-mode.js              — Theme toggle: system preference detection, localStorage persistence
+  dark-mode.js              — Theme toggle: system preference detection, localStorage persistence, themed `<picture>` sources
   age.js                    — Age calculation from birth date (vanilla JS)
   image-modal.js            — Photo gallery modal (swipe, pinch-to-zoom, keyboard nav)
   scroll-to-gallery.js      — Smooth-scrolls to the "Recent shots" section on button click
   scroll-to-experience.js   — Smooth-scrolls to the "Experience" section on button click
   overview-return.js        — Floating bottom-right button that appears on scroll and smooth-scrolls to top (named to avoid ad-block "back to top" cosmetic filters)
 images/                     — Portfolio photos, company logos, social icons
+  apps/                     — App icons (light + dark pair per app) for the "Apps" section
   portfolio/                — Gallery photos, each stored as a full-size + thumbnail pair
 ```
+
+## Apps section
+
+The "Apps" section (`#apps`) showcases the iOS apps. Each app is a single `<a class="app-card">` linking to its
+`<app>.af.codes` subdomain. The card surface is invisible at rest and lifts off the background on hover and
+keyboard focus, colored by the `--card-hover-background-color` / `--card-hover-shadow` custom properties in both
+theme stylesheets. `.app-card` is excluded from the global `.bg-gray a` underline and hover-scale rules in
+`index-common.css`, the same way `.icon` and `.docs-logo` are.
+
+Keep the descriptions about the same length (~100 characters). The grid is three columns above 960px and stacks
+at or below it (`col-lg-12`), which keeps the three-column text width in a narrow band, and `text-wrap: pretty`
+fills each paragraph to the same measure, so equal-length copy wraps to the same line count side by side.
+
+Each app's icons are copied from its site's `gh-pages` branch (`images/app-icon-light.png` /
+`images/app-icon-dark.png`) into `images/apps/<app>-light.png` / `<app>-dark.png`; re-copy them when an app's
+icon changes. Alveary's site has no finished icon (it layers the bee over a CSS gradient), so `alveary-*.png` are
+composited at 256x256: its site's gradient (`#F7C133` → `#F2AC00` light, `#3a3a37` → `#232320` dark, top to 70%),
+the bee layer from its repo's `AppIcon.icon/Assets` at 90% scale nudged up 1.55%, clipped to
+`chromahora-light.png`'s alpha so the silhouette matches the other icons exactly.
+
+Each icon is a `<picture>` whose dark `<source>` carries `data-theme="dark"` and a
+`(prefers-color-scheme: dark)` media query, with the light image as the `<img>` fallback. `dark-mode.js`
+flips every `picture source[data-theme]` when the toggle overrides the system theme, so any new themed
+image should follow the same pattern. Don't give app icons the `.icon` class: the dark theme inverts
+`.icon img`.
 
 ## Portfolio images
 

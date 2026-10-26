@@ -8,6 +8,15 @@
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
 
+    // Themed images are a <picture> whose dark <source> is media-scoped like the
+    // stylesheets, so an override has to flip it the same way.
+    function applyPictures(theme) {
+        var sources = document.querySelectorAll('picture source[data-theme]');
+        for (var i = 0; i < sources.length; i++) {
+            sources[i].media = sources[i].getAttribute('data-theme') === theme ? 'all' : 'not all';
+        }
+    }
+
     function applyTheme(theme) {
         if (theme === 'dark') {
             darkSheet.media = 'all';
@@ -17,6 +26,7 @@
             darkSheet.media = 'not all';
         }
         applyThemeColor(theme);
+        applyPictures(theme);
     }
 
     function restoreSystemDefault() {
@@ -47,6 +57,11 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
+        // The <picture> elements weren't parsed yet when an override was applied in <head>.
+        if (stored) {
+            applyPictures(currentTheme);
+        }
+
         var toggle = document.getElementById('theme-toggle');
         if (!toggle) return;
 

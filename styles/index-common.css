@@ -15,14 +15,14 @@
     text-decoration: none
 }
 
-.bg-gray a:not(.btn):not(.docs-logo) {
+.bg-gray a:not(.btn):not(.docs-logo):not(.app-card) {
     border-bottom: .1rem solid currentColor;
     padding-bottom: .05rem;
     text-decoration: none
 }
 
 .bg-primary a:not(.btn):not(.icon),
-.bg-gray a:not(.btn):not(.docs-logo):not(.icon) {
+.bg-gray a:not(.btn):not(.docs-logo):not(.icon):not(.app-card) {
     display: inline-block;
     vertical-align: baseline;
     line-height: 1.15;
@@ -32,7 +32,7 @@
 
 @media (hover: hover) and (pointer: fine) {
     .bg-primary a:not(.btn):not(.icon):hover,
-    .bg-gray a:not(.btn):not(.docs-logo):not(.icon):hover {
+    .bg-gray a:not(.btn):not(.docs-logo):not(.icon):not(.app-card):hover {
         transform: scale(1.05);
     }
 }
@@ -419,6 +419,64 @@
         filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
         transform: scale(1.02);
     }
+}
+
+/* The icons are pre-masked squircles in both appearances, which blend into the
+   matching section background without the shadow. */
+.app-icon {
+    display: block;
+    width: 4.8rem;
+    height: auto;
+    margin: 0 auto .8rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Each app is a single link whose card surface only shows on hover or keyboard
+   focus, lifting off the section background. */
+.app-card {
+    display: block;
+    height: 100%;
+    padding: 1.2rem 1rem;
+    border-radius: 16px;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Spectre rings any focused link, which would leave a stray outline around the
+   invisible card after a mouse click opens the app's site in a new tab. */
+.app-card:focus {
+    box-shadow: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .app-card:hover {
+        background-color: var(--card-hover-background-color);
+        box-shadow: var(--card-hover-shadow);
+        transform: translateY(-4px);
+    }
+}
+
+.app-card:focus-visible {
+    background-color: var(--card-hover-background-color);
+    box-shadow: var(--card-hover-shadow);
+    transform: translateY(-4px);
+}
+
+.app-card h5 {
+    margin-bottom: .1rem;
+}
+
+.app-platforms {
+    font-size: .7rem;
+    opacity: .75;
+    margin-bottom: .6rem;
+}
+
+/* Stacked cards would otherwise stretch the text across the whole container. */
+.app-card p {
+    max-width: 21rem;
+    margin: 0 auto;
+    text-wrap: pretty;
 }
 
 #image-modal {

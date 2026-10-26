@@ -10,6 +10,8 @@
     --primary-color: #001a69;
     --primary-color-lighter: #8aaeff;
     --secondary-color: #002491;
+    --card-hover-background-color: #242424;
+    --card-hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
 html {
