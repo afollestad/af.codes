@@ -33,7 +33,6 @@ FONT_PATH = os.path.join(_SKILL_DIR, _BUNDLED_FONTS[0]) if _BUNDLED_FONTS else N
 # Judge by that corner alone: a night shot with a lit bottom-right reads fine at 50%.
 DARK_IMAGES = {
     "moon.jpg", "moon_thumbnail.jpg",
-    "lanternpeacock.jpg", "lanternpeacock_thumbnail.jpg",
     "lanternbutterfly.jpg", "lanternbutterfly_thumbnail.jpg",
 }
 DEFAULT_OPACITY = 0.50

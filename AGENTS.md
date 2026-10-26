@@ -63,8 +63,8 @@ Both are required. `index.html` references only the thumbnail; `scripts/image-mo
 full-size URL for the modal by stripping `_thumbnail` from the thumbnail's `src`, so a missing
 full-size file produces a broken modal rather than a visibly broken page.
 
-Two thumbnails predate the convention: `snow` and `snow2` are 696x464. Same 3:2 ratio, so they lay
-out identically — leave them alone rather than resizing.
+One thumbnail predates the convention: `snow2` is 696x464. Same 3:2 ratio, so it lays out
+identically — leave it alone rather than resizing.
 
 When adding photos:
 
