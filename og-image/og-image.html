@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>af.codes link preview</title>
+    <!-- Composes images/og-image.png at the 1200x630 link previews expect. Don't
+         open it directly: render.sh fills in the photos and app icons from
+         index.html and screenshots it on the dark theme. -->
+    <link rel="stylesheet" href="../styles/index-common.css">
+    <link rel="stylesheet" href="../styles/index-dark.css">
+    <style>
+        html,
+        body {
+            width: 1200px;
+            height: 630px;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .section-hero {
+            height: 630px;
+            padding: 0;
+            text-align: left;
+        }
+
+        .hero-sky {
+            -webkit-mask-image: none;
+            mask-image: none;
+        }
+
+        .og-copy {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 72px;
+            width: 520px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .og-logo {
+            width: 96px;
+            border-radius: 50%;
+            box-shadow: 0 .75rem 1.5rem -.5rem rgba(0, 0, 0, .6);
+        }
+
+        .hero-copy h1 {
+            align-self: flex-start;
+            margin-top: 28px;
+            font-size: 72px;
+        }
+
+        .tagline {
+            max-width: 470px;
+            margin: 14px 0 0;
+            font-size: 24px;
+            text-wrap: pretty;
+        }
+
+        .og-apps {
+            display: flex;
+            gap: 18px;
+            margin-top: 34px;
+        }
+
+        .og-apps .app-icon {
+            width: 72px;
+            margin: 0;
+        }
+
+        .og-photos {
+            position: absolute;
+            top: 50px;
+            right: 48px;
+            display: grid;
+            grid-template-columns: repeat(2, 252px);
+            gap: 14px;
+        }
+
+        .og-photos .portfolio-image {
+            border-radius: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section-hero">
+        <div class="hero-sky"></div>
+        <div class="og-copy hero-copy">
+            <img class="og-logo" src="../images/af.png" alt="">
+            <h1>Aidan Follestad</h1>
+            <p class="tagline">Full stack software developer, Staff (L6) Android Engineer @ Block</p>
+            <div class="og-apps" id="apps"></div>
+        </div>
+        <div class="og-photos" id="photos"></div>
+    </section>
+
+    <script>
+        (function () {
+            // render.sh passes repo-relative paths, comma separated.
+            var params = new URLSearchParams(location.search);
+
+            function fill(id, param, className) {
+                var paths = (params.get(param) || '').split(',').filter(Boolean);
+                var target = document.getElementById(id);
+                for (var i = 0; i < paths.length; i++) {
+                    var img = document.createElement('img');
+                    img.className = className;
+                    img.src = '../' + paths[i];
+                    img.alt = '';
+                    target.appendChild(img);
+                }
+            }
+
+            fill('apps', 'apps', 'app-icon');
+            fill('photos', 'photos', 'portfolio-image');
+        })();
+    </script>
+</body>
+
+</html>

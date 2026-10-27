@@ -1,111 +1,151 @@
-/* Non-theme dependent stuff. */
+/* Theme-independent layout for af.codes, in the same family as the app sites
+   (alveary/chromahora/carouline.af.codes). Color tokens and the glow painted
+   with them live in index-light.css / index-dark.css. */
 
-.circular {
+:root {
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    /* Scroll-to-top button geometry. */
+    --fab-size: 2.5rem;
+    --fab-inset: 1.5rem;
+
+    /* Half the gap between sections. The hero's bottom padding uses it too, so
+       the hero sits as far from the first section as the sections sit from each
+       other. */
+    --section-space: 2.75rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font);
+    line-height: 1.5;
+    background: var(--bg);
+    color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    /* Clears the scroll-to-top button once the page is scrolled to the end. */
+    padding-bottom: calc(var(--fab-inset) + var(--fab-size));
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-text);
+    outline-offset: 2px;
+}
+
+.container {
+    max-width: 68rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+/* Reading width for the introduction and the experience timeline. */
+.container.narrow {
+    max-width: 46rem;
+}
+
+/* Hero ------------------------------------------------------------------- */
+
+.section-hero {
+    /* .hero-sky, .top-brand and .top-actions are absolute; without this they
+       would anchor to the initial containing block instead of the hero. The
+       glow is wider than narrow viewports, so it's clipped here rather than
+       scrolling the page sideways. */
+    position: relative;
+    overflow: hidden;
+    overflow: clip;
+    padding: 7rem 0 var(--section-space);
+    text-align: center;
+}
+
+/* The theme sheets paint the glow. It fades out before the hero's bottom
+   edge, where the clip would otherwise cut it off in a line. */
+.hero-sky {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+}
+
+.hero-copy,
+.top-brand,
+.top-actions {
+    position: relative;
+    z-index: 1;
+}
+
+/* Top brand and actions -------------------------------------------------- */
+
+.top-brand,
+.top-actions {
+    position: absolute;
+    top: 1rem;
+    display: flex;
+}
+
+.top-brand {
+    left: 1.5rem;
+    padding: .25rem;
+}
+
+.top-brand img {
+    width: 2rem;
     border-radius: 50%;
 }
 
-.raised {
-    margin-bottom: 1.1rem;
-    border-radius: .4rem;
-}
-
-.bg-primary a:not(.btn) {
-    border-bottom: .1rem solid currentColor;
-    padding-bottom: .05rem;
-    text-decoration: none
-}
-
-.bg-gray a:not(.btn):not(.docs-logo):not(.app-card) {
-    border-bottom: .1rem solid currentColor;
-    padding-bottom: .05rem;
-    text-decoration: none
-}
-
-.bg-primary a:not(.btn):not(.icon),
-.bg-gray a:not(.btn):not(.docs-logo):not(.icon):not(.app-card) {
-    display: inline-block;
-    vertical-align: baseline;
-    line-height: 1.15;
-    padding-bottom: .05rem;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .bg-primary a:not(.btn):not(.icon):hover,
-    .bg-gray a:not(.btn):not(.docs-logo):not(.icon):not(.app-card):hover {
-        transform: scale(1.05);
-    }
-}
-
-.docs-brand {
-    height: 2rem;
-    left: 1.5rem;
-    position: fixed;
-    top: .85rem
-}
-
-.docs-brand .docs-logo {
-    align-items: center;
-    border-radius: .1rem;
-    display: inline-flex;
-    display: -ms-inline-flexbox;
-    -ms-flex-align: center;
-    font-size: .7rem;
-    height: 2rem;
-    padding: .2rem;
-    width: auto
-}
-
-.docs-brand .docs-logo:focus,
-.docs-brand .docs-logo:hover {
-    text-decoration: none
-}
-
-.docs-brand .docs-logo img {
-    display: inline-block;
-    height: auto;
-    width: 1.6rem
-}
-
-.docs-brand .docs-logo h2 {
-    display: inline-block;
-    font-size: .8rem;
-    font-weight: 700;
-    line-height: 1.5rem;
-    margin-bottom: 0;
-    margin-left: .5rem;
-    margin-right: .3rem
-}
-
 .top-actions {
-    height: 2rem;
     right: 1.5rem;
-    position: fixed;
-    top: .85rem;
-    display: flex;
-    align-items: center;
-    gap: .4rem;
+    gap: .5rem;
 }
 
 .top-btn {
-    align-items: center;
-    background: none;
-    border: none;
-    border-radius: .1rem;
-    cursor: pointer;
     display: inline-flex;
-    height: 2rem;
+    align-items: center;
     justify-content: center;
-    padding: .2rem;
-    width: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 50%;
+    background: none;
     color: inherit;
-    opacity: 0.7;
-    transition: opacity 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+    opacity: .75;
+    transition: opacity .2s ease, color .2s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
     .top-btn:hover {
         opacity: 1;
+        color: var(--accent-text);
     }
 }
 
@@ -118,32 +158,443 @@
     display: none;
 }
 
-/* Do NOT rename this to a generic "back to top" name (jump-to-top, back-to-top,
-   scroll-to-top): ad-block cosmetic filters hide those id/class names, which
-   makes the button vanish in browsers with a content blocker. */
-.overview-return {
+/* Name and tagline ------------------------------------------------------- */
+
+.hero-copy h1 {
+    display: inline-block;
+    font-size: clamp(2.75rem, 7vw, 4.25rem);
+    letter-spacing: -.035em;
+    line-height: 1.1;
+}
+
+/* The name is painted in the logo's blue wherever text can be a gradient's
+   clip; elsewhere it stays plain --fg. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .hero-copy h1 {
+        background: var(--title-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.tagline {
+    max-width: 36rem;
+    margin: 1rem auto 0;
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    line-height: 1.55;
+    color: var(--secondary);
+    text-wrap: balance;
+}
+
+/* Buttons ---------------------------------------------------------------- */
+
+.cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .75rem;
+    margin-top: 2rem;
+}
+
+/* Glass, over the glow. */
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    height: 3rem;
+    padding: 0 1.3rem;
+    border: 1px solid var(--glass-border);
+    border-radius: .55rem;
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    backdrop-filter: blur(12px) saturate(160%);
+    font-size: .95rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .btn-ghost:hover {
+        transform: scale(1.03);
+    }
+}
+
+/* Skills ----------------------------------------------------------------- */
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 52rem;
+    margin: 3rem auto 0;
+}
+
+/* Plain columns between hairlines rather than cards: a glass surface reads as
+   clickable, and only the app cards are links. */
+.skill {
+    padding: .25rem 1.25rem;
+}
+
+.skill + .skill {
+    border-left: 1px solid var(--divider);
+}
+
+.skill h2 {
+    font-size: 1.05rem;
+    color: var(--accent-text);
+}
+
+.skill p {
+    margin-top: .35rem;
+    font-size: .95rem;
+    color: var(--secondary);
+}
+
+/* Sections --------------------------------------------------------------- */
+
+.section-feature {
+    padding: var(--section-space) 0;
+    text-align: center;
+}
+
+/* Section headings are capsules filled with the logo's blue, like the app
+   sites' chips. */
+.chip {
+    display: inline-flex;
+    margin-bottom: 2.25rem;
+    padding: .35rem 1rem;
+    border-radius: 999px;
+    background: var(--chip-bg);
+    color: var(--chip-fg);
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, .2),
+        inset 0 1px 0 rgba(255, 255, 255, .3),
+        0 1px 2px rgba(0, 0, 0, .1),
+        0 .35rem .9rem -.35rem var(--chip-bg);
+}
+
+/* Introduction ----------------------------------------------------------- */
+
+.prose {
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--secondary);
+}
+
+.prose p + p {
+    margin-top: 1.1rem;
+}
+
+.prose strong,
+.prose em {
+    color: var(--fg);
+}
+
+.prose a {
+    color: var(--accent-text);
+    text-decoration-thickness: 1px;
+    text-underline-offset: .2em;
+}
+
+/* Experience ------------------------------------------------------------- */
+
+/* Each company is a header followed by a timeline: a hairline down the left
+   with a bullet per role, and an arrowhead on the most recent one. Each role's
+   title and dates share a row, with its summary below. */
+.experiences {
+    text-align: left;
+}
+
+.experiences .list-header {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+}
+
+.experiences .list-header:not(:first-child) {
+    margin-top: 2.25rem;
+}
+
+.experiences .list-header .icon {
+    width: 48px;
+}
+
+.experiences .list-header .empty-icon {
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+}
+
+.experiences .list-header h3 {
+    font-size: 1.25rem;
+    letter-spacing: -.01em;
+}
+
+/* flow-root keeps the first role's top margin inside the wrapper; collapsed
+   through it, the line's top would be measured from the role, not the wrapper. */
+.experiences .list-wrapper {
+    --role-gap: 1.1rem;
+    --bullet-top: .3rem;
+    --arrow-height: 12px;
+    position: relative;
+    display: flow-root;
+}
+
+/* Starts halfway down the first role's arrowhead, so it never pokes out above
+   the tip. */
+.experiences .list-wrapper .list-line {
+    position: absolute;
+    top: calc(var(--role-gap) + var(--bullet-top) + var(--arrow-height) / 2);
+    bottom: 0;
+    left: 23.5px;
+    width: 1px;
+    background: var(--timeline);
+}
+
+.experiences .list-wrapper:not(:last-child) .list-line {
+    bottom: -.75rem;
+}
+
+/* The last timeline fades out rather than stopping short. */
+.experiences .list-wrapper:last-child .list-line {
+    background: linear-gradient(to bottom, var(--timeline), transparent);
+}
+
+/* Positioned so the bullets paint over the line, which is absolute. */
+.experiences .list-wrapper .list-item {
+    position: relative;
+    display: flex;
+    margin-top: var(--role-gap);
+}
+
+.experiences .list-wrapper .list-item-bullet {
+    width: 13px;
+    height: 13px;
+    margin: var(--bullet-top) 0 0 17.5px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);
+}
+
+/* The newest role's bullet is an arrowhead pointing up the timeline. */
+.experiences .list-wrapper .first-bullet {
+    width: 0;
+    height: 0;
+    margin-left: 17px;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: var(--arrow-height) solid var(--accent);
+}
+
+.experiences .list-wrapper .list-item-content {
+    flex: 1;
+    min-width: 0;
+    margin-left: 1.15rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 1rem;
+    align-items: baseline;
+}
+
+.experiences .list-wrapper .list-item h4 {
+    font-weight: 600;
+}
+
+.experiences .list-wrapper .list-item .when {
+    font-size: .875rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    color: var(--secondary);
+}
+
+.experiences .list-wrapper .list-item p {
+    grid-column: 1 / -1;
+    margin-top: .25rem;
+    font-size: .95rem;
+    line-height: 1.55;
+    color: var(--secondary);
+}
+
+/* Apps ------------------------------------------------------------------- */
+
+/* Three columns above 960px. Keep the descriptions about the same length so
+   they wrap to the same line count side by side. */
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+/* Each app is a single glass card that lifts on hover or keyboard focus. */
+.app-card {
+    padding: 1.75rem 1.25rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 1.25rem;
+    background: var(--glass);
+    box-shadow: 0 .5rem 1.5rem -.75rem var(--glass-shadow);
+    text-decoration: none;
+    transition: box-shadow .2s ease, transform .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .app-card:hover {
+        box-shadow: var(--card-hover-shadow);
+        transform: translateY(-4px);
+    }
+}
+
+.app-card:focus-visible {
+    box-shadow: var(--card-hover-shadow);
+    transform: translateY(-4px);
+}
+
+/* The icons are pre-masked squircles; drop-shadow follows their alpha. */
+.app-icon {
+    width: 5.5rem;
+    margin: 0 auto 1rem;
+    filter: drop-shadow(0 .5rem 1rem var(--icon-shadow));
+}
+
+.app-card h3 {
+    font-size: 1.25rem;
+    letter-spacing: -.01em;
+}
+
+.app-platforms {
+    margin-top: .15rem;
+    font-size: .85rem;
+    font-weight: 500;
+    color: var(--accent-text);
+}
+
+/* Stacked cards would otherwise stretch the text across the whole container. */
+.app-card p {
+    max-width: 21rem;
+    margin: .75rem auto 0;
+    font-size: .95rem;
+    line-height: 1.55;
+    color: var(--secondary);
+    text-wrap: pretty;
+}
+
+/* Recent shots ----------------------------------------------------------- */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+/* scripts/image-modal.js collects every .portfolio-image and opens its
+   full-size counterpart. */
+.portfolio-image {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: .9rem;
+    background-color: var(--glass);
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .12), 0 .6rem 1.2rem -.6rem var(--photo-shadow);
+    transition: box-shadow .2s ease, transform .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .portfolio-image:hover {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .15), 0 1rem 2rem -.75rem var(--photo-shadow);
+        transform: scale(1.02);
+    }
+}
+
+/* Image modal ------------------------------------------------------------ */
+
+#image-modal {
+    display: none;
     position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 400;
+}
+
+#image-modal.active {
+    display: flex;
+    background-color: rgba(0, 0, 0, .9);
+}
+
+#image-modal-close {
+    position: absolute;
+    top: 1.5rem;
     right: 1.5rem;
-    bottom: 1.5rem;
-    width: 2rem;
-    height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, .25);
     border-radius: 50%;
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
     cursor: pointer;
-    color: #ffffff;
-    background: rgba(22, 24, 32, 0.5);
+}
+
+#image-modal-img {
+    border-radius: 16px;
+    aspect-ratio: 3 / 2;
+    max-width: 90%;
+    max-height: 80%;
+    background-color: rgba(0, 0, 0, .6);
+    opacity: 0;
+    transition: opacity .3s ease-in-out, transform .3s ease-out;
+    will-change: transform, opacity;
+    touch-action: none;
+    user-select: none;
+}
+
+#image-modal-img.loaded {
+    opacity: 1;
+}
+
+/* Scroll-to-top ---------------------------------------------------------- */
+
+/* Do NOT rename this to a generic "back to top" name (jump-to-top, back-to-top,
+   scroll-to-top): ad-block cosmetic filters hide those id/class names, which
+   makes the button vanish in browsers with a content blocker. Glass, like the
+   ghost buttons. */
+.overview-return {
+    position: fixed;
+    right: var(--fab-inset);
+    bottom: var(--fab-inset);
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--fab-size);
+    height: var(--fab-size);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    background: var(--glass);
     -webkit-backdrop-filter: blur(12px) saturate(160%);
     backdrop-filter: blur(12px) saturate(160%);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    color: var(--fg);
+    box-shadow: 0 4px 16px var(--glass-shadow);
+    cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(0.5rem);
-    transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), visibility 0.25s ease;
-    z-index: 300;
+    transform: translateY(.5rem);
+    transition: opacity .25s ease, transform .3s cubic-bezier(0.34, 1.56, 0.64, 1), visibility .25s ease;
 }
 
 .overview-return.visible {
@@ -158,370 +609,76 @@
     }
 }
 
-.section-hero {
-    padding: 1rem .5rem
-}
+/* Responsive ------------------------------------------------------------- */
 
-.section-hero .docs-brand {
-    position: absolute;
-    top: .85rem
-}
-
-.section-hero .top-actions {
-    position: absolute;
-    top: .85rem
-}
-
-.section-hero .column {
-    padding: .4rem
-}
-
-.section-features {
-    padding: 3rem .5rem
-}
-
-.section-features .column {
-    padding: .4rem
-}
-
-.card {
-    background: 0 0;
-    border: 0;
-    padding: .5rem
-}
-
-.card .card-title {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 0
-}
-
-.grid-hero {
-    padding-bottom: 0.5rem;
-    padding-top: 5.6rem
-}
-
-.grid-hero h1 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 1rem
-}
-
-.grid-hero h2 {
-    font-size: .9rem;
-    font-weight: 400;
-    line-height: 1.5rem;
-    margin-bottom: 1.5rem
-}
-
-.grid-hero h2 u {
-    border-bottom: .1rem solid currentColor;
-    padding-bottom: .05rem;
-    text-decoration: none
-}
-
-.card-body img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: .5rem;
-}
-
-.column p:last-child {
-    margin-bottom: 0 !important;
-}
-
-.icons-frame {
-    margin-bottom: 1rem !important;
-    padding-left: 12px;
-}
-
-@media (max-width:500px) {
-    .card .card-header {
-        padding-top: 0 !important;
-    }
-
-    .section-features {
-        padding: 2rem 0.5rem !important;
+@media (max-width: 960px) {
+    .app-grid {
+        grid-template-columns: 1fr;
+        max-width: 30rem;
+        margin: 0 auto;
     }
 }
 
-@media (max-width:600px) {
-    .grid-hero h2 {
-        font-size: .9rem
+@media (max-width: 840px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
     }
-
-    .grid-hero .card {
-        padding: 0
-    }
-
-    .mr-2 {
-        margin-right: .6rem !important
-    }
-
-    .card-body {
-        padding-top: .2rem !important;
-    }
-
-    .card-body img {
-        margin-bottom: .8rem;
-    }
-}
-
-@media (min-width:601px) {
-    .mr-2 {
-        margin-right: .7rem !important
-    }
-}
-
-.icon {
-    width: 48px;
-    height: 48px;
-    border-bottom: none !important;
-    text-decoration: none !important;
-}
-
-.icon img {
-    display: inline-block;
-    width: 48px;
-    height: 48px;
-    vertical-align: middle;
-}
-
-.img-link {
-    text-decoration: none !important;
-    border-bottom: none !important;
-}
-
-.experiences .list-header {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-}
-
-.experiences .list-header:not(:first-child) {
-    margin-top: 1.5rem;
-}
-
-.experiences .list-header .icon {
-    display: inline-block;
-    width: 48px;
-    height: auto;
-    margin-right: 0.7rem;
-}
-
-.experiences .list-header .icon.no-rounding {
-    border-radius: 0 !important;
-}
-
-.experiences .list-header .empty-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-}
-
-.experiences .list-header h5 {
-    margin-bottom: 0 !important;
-    margin-left: 5px !important;
-}
-
-.experiences .list-wrapper {
-    display: block;
-    position: relative;
-}
-
-.experiences .list-wrapper .list-item {
-    display: flex;
-    position: relative;
-    margin-top: 1rem !important;
-    height: 100%;
-}
-
-.experiences .list-wrapper .list-line {
-    position: absolute;
-    left: 0;
-    width: 1px;
-    height: 100%;
-    left: 22.5px;
-}
-
-.experiences .list-wrapper:not(:last-child) .list-line {
-    height: calc(100% + 0.5rem);
-}
-
-.experiences .list-wrapper .list-item-bullet {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    margin-right: 1rem;
-    margin-left: 16px;
-    flex: 0 0 auto;
-}
-
-.first-bullet {
-    background: none !important;
-    width: 0 !important;
-    height: 0 !important;
-    border-radius: 0 !important;
-    border-left: 7px solid transparent !important;
-    border-right: 7px solid transparent !important;
-    border-bottom: 12px solid white;
-    position: relative !important;
-    top: -1px !important;
-}
-
-.experiences .list-wrapper .list-item-content {
-    display: block;
-    margin-top: -.3rem;
-    margin-left: 18px;
-}
-
-.experiences .list-wrapper .list-item h6 {
-    display: inline-block;
-}
-
-.experiences .list-wrapper .list-item .when {
-    position: absolute;
-    right: 0;
-    display: inline;
-}
-
-.experiences .list-wrapper .list-item p {
-    display: block;
-    margin: 0;
 }
 
 @media (max-width: 700px) {
+    /* No room beside the role for its dates, so they drop below it. */
+    .experiences .list-wrapper .list-item-content {
+        grid-template-columns: 1fr;
+    }
+
     .experiences .list-wrapper .list-item .when {
-        position: relative;
-        display: block;
+        margin-top: .1rem;
     }
 }
 
-.portfolio-image {
-    border-radius: 16px;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-    background-color: rgba(128, 128, 128, 0.1);
-    background-clip: content-box;
-    cursor: pointer;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
-    transition: filter 0.2s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
+@media (max-width: 600px) {
+    :root {
+        --section-space: 2.125rem;
+    }
 
-@media (hover: hover) and (pointer: fine) {
-    .portfolio-image:hover {
-        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
-        transform: scale(1.02);
+    .section-hero {
+        padding-top: 5.5rem;
+    }
+
+    .skills {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-top: 2.25rem;
+    }
+
+    .skill + .skill {
+        border-left: none;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: .75rem;
     }
 }
 
-/* The icons are pre-masked squircles in both appearances, which blend into the
-   matching section background without the shadow. */
-.app-icon {
-    display: block;
-    width: 4.8rem;
-    height: auto;
-    margin: 0 auto .8rem;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
-}
-
-/* Each app is a single link whose card surface only shows on hover or keyboard
-   focus, lifting off the section background. */
-.app-card {
-    display: block;
-    height: 100%;
-    padding: 1.2rem 1rem;
-    border-radius: 16px;
-    text-decoration: none !important;
-    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-/* Spectre rings any focused link, which would leave a stray outline around the
-   invisible card after a mouse click opens the app's site in a new tab. */
-.app-card:focus {
-    box-shadow: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .app-card:hover {
-        background-color: var(--card-hover-background-color);
-        box-shadow: var(--card-hover-shadow);
-        transform: translateY(-4px);
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
     }
 }
 
-.app-card:focus-visible {
-    background-color: var(--card-hover-background-color);
-    box-shadow: var(--card-hover-shadow);
-    transform: translateY(-4px);
-}
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+    }
 
-.app-card h5 {
-    margin-bottom: .1rem;
-}
-
-.app-platforms {
-    font-size: .7rem;
-    opacity: .75;
-    margin-bottom: .6rem;
-}
-
-/* Stacked cards would otherwise stretch the text across the whole container. */
-.app-card p {
-    max-width: 21rem;
-    margin: 0 auto;
-    text-wrap: pretty;
-}
-
-#image-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    align-items: center;
-    justify-content: center;
-    z-index: 400;
-}
-
-#image-modal.active {
-    display: flex;
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-#image-modal .btn-clear {
-    position: absolute;
-    right: 2rem;
-    top: 2rem;
-    border: none !important;
-    font-size: 1rem;
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-#image-modal a {
-    color: white !important;
-}
-
-#image-modal-img {
-    border-radius: 16px;
-    aspect-ratio: 3 / 2;
-    max-width: 90%;
-    max-height: 80%;
-    background-color: rgba(0, 0, 0, 0.6);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-out;
-    will-change: transform, opacity;
-    touch-action: none;
-    user-select: none;
-}
-
-#image-modal-img.loaded {
-    opacity: 1;
+    .btn-ghost:hover,
+    .app-card:hover,
+    .app-card:focus-visible,
+    .portfolio-image:hover,
+    .overview-return.visible:hover {
+        transform: none;
+    }
 }

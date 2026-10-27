@@ -1,127 +1,44 @@
-/* Light on dark */
+/* Light theme: a cool white under a glow of the logo's blue.
+   Don't forget to update the theme colors in scripts/dark-mode.js and
+   index.html's theme-color metas if --bg changes. */
 
-/** Don't forget to update theme-color in scripts/dark-mode.js if primary is changed. */
 :root {
-    --primary-text-color: #3b4351;
-    --secondary-text-color: #455060;
-    --primary-text-on-primary-color: #FFFFFF;
-    --secondary-text-on-primary-color: #e5e5f9;
-    --theme-background-color: #FFFFFF;
-    --primary-color: #0288d1;
-    --secondary-color: #005b9f;
-    --card-hover-background-color: #FFFFFF;
-    --card-hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.06);
+    color-scheme: light;
+
+    --bg: #f6f8fc;
+    --fg: #0f1a2e;
+    --secondary: #4a5670;
+    /* The logo's blue, for fills. */
+    --accent: #1f6fd1;
+    /* Deepened for text, focus rings and hover, 5.9:1 on --bg. */
+    --accent-text: #1a5fb4;
+    --chip-bg: #1f6fd1;
+    --chip-fg: #ffffff;
+    /* Every stop holds at least 3:1 even where the hero's glow is strongest. */
+    --title-gradient: linear-gradient(100deg, #0f3d91 5%, #1a5fb4 50%, #2371c4 95%);
+    --glass: rgba(255, 255, 255, .7);
+    --glass-border: rgba(15, 26, 46, .08);
+    --glass-shadow: rgba(20, 60, 130, .18);
+    --card-hover-shadow: 0 .5rem 1.5rem -.5rem rgba(20, 60, 130, .25), 0 1.5rem 3rem -1.5rem rgba(20, 60, 130, .3);
+    --icon-shadow: rgba(20, 60, 130, .22);
+    --photo-shadow: rgba(15, 26, 46, .35);
+    --timeline: rgba(15, 26, 46, .18);
+    --divider: rgba(15, 26, 46, .14);
 }
 
 html {
-    background: var(--primary-color) !important;
-}
-
-.raised {
-    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.2), 0 3px 6px rgba(255, 255, 255, 0.3);
-}
-
-.btn {
-    border: .05rem solid var(--secondary-color) !important;
-    color: var(--secondary-color) !important;
-}
-.btn.btn-primary {
-    color: var(--primary-text-color) !important;
-    background: var(--primary-color) !important;
-}
-
-.bg-gray a:not(.btn):not(.docs-logo), a {
-    color: var(--primary-text-color) !important;
-}
-.bg-gray .card .card-title {
-    color: var(--primary-color) !important;
-}
-.bg-gray .text-secondary, .card {
-    color: var(--secondary-text-color) !important;
-}
-
-.bg-primary {
-    color: var(--primary-text-color) !important;
-    background: var(--primary-color) !important;
-}
-.bg-primary .card {
-    color: var(--secondary-text-on-primary-color) !important;
-}
-.bg-primary .card .card-title {
-    color: var(--primary-text-color) !important;
-}
-
-.docs-brand {
-    color: var(--primary-color) !important;
-}
-
-.section-hero .docs-brand h2 {
-    color: var(--primary-color) !important;
-}
-
-.section-features.bg-gray h2 {
-    color: var(--primary-text-color) !important;
-}
-
-.grid-hero h1 {
-    color: var(--primary-text-color) !important;
-}
-
-.grid-hero h2 {
-    color: var(--secondary-text-color) !important;
-}
-
-.experiences .list-header .empty-icon {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-.experiences .list-header h5 {
-    color: var(--primary-text-color) !important;
-}
-
-.experiences .list-wrapper .list-item h6 {
-    color: var(--primary-text-color) !important;
-}
-
-.experiences .list-wrapper .list-line {
-    background-color: black;
-}
-
-.experiences .list-wrapper:last-child .list-line {
-    background: linear-gradient(to bottom, black, transparent);
-}
-
-.experiences .list-wrapper .list-item-bullet {
-    background-color: black;
-}
-
-.experiences .list-wrapper .list-item .when {
-    color: rgba(0, 0, 0, .5);
-}
-
-.experiences .list-wrapper .list-item p {
-    color: rgba(0, 0, 0, .85);
-}
-
-.first-bullet {
-    border-bottom: 12px solid black !important;
-}
-
-.top-btn {
-    color: #1a1a1a !important;
-    opacity: 0.85;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .top-btn:hover {
-        color: var(--primary-color) !important;
-    }
-}
-
-.theme-toggle .icon-sun {
-    display: none;
+    background: var(--bg);
 }
 
 .theme-toggle .icon-moon {
     display: block;
+}
+
+/* The logo's blue washing down from the top, with a cooler indigo and a
+   brighter sky blue to either side. */
+.hero-sky {
+    background:
+        radial-gradient(ellipse 1100px 520px at 50% 0%, rgba(31, 111, 209, .22) 0%, rgba(31, 111, 209, .08) 50%, rgba(31, 111, 209, 0) 100%),
+        radial-gradient(ellipse 700px 420px at 15% 20%, rgba(80, 90, 220, .12) 0%, rgba(80, 90, 220, 0) 70%),
+        radial-gradient(ellipse 700px 420px at 85% 15%, rgba(90, 170, 255, .16) 0%, rgba(90, 170, 255, 0) 70%);
 }

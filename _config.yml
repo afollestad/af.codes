@@ -5,3 +5,4 @@ exclude:
   - .github/
   - "**/*.md"
   - ".alveary.json"
+  - og-image/

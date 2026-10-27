@@ -1,139 +1,43 @@
-/* Dark on light */
+/* Dark theme: navy-black under the deep blue the site's bands used to be.
+   Don't forget to update the theme colors in scripts/dark-mode.js and
+   index.html's theme-color metas if --bg changes, and re-render
+   images/og-image.png, which bakes it in as its canvas. */
 
-/** Don't forget to update theme-color in scripts/dark-mode.js if primary is changed. */
 :root {
-    --primary-text-color: rgb(250, 250, 250);
-    --secondary-text-color: rgba(255, 255, 255, 0.9);
-    --primary-text-on-primary-color: #FFFFFF;
-    --secondary-text-on-primary-color: #e5e5f9;
-    --theme-background-color: #121212;
-    --primary-color: #001a69;
-    --primary-color-lighter: #8aaeff;
-    --secondary-color: #002491;
-    --card-hover-background-color: #242424;
-    --card-hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+
+    --bg: #0a0f1d;
+    --fg: #eef2fa;
+    --secondary: #a7b1c6;
+    /* The logo's blue, lifted for the dark page: 8.7:1 on --bg. */
+    --accent: #8aaeff;
+    --accent-text: #8aaeff;
+    --chip-bg: #8aaeff;
+    --chip-fg: #0a0f1d;
+    --title-gradient: linear-gradient(100deg, #d6e4ff 5%, #8aaeff 50%, #4f8dff 95%);
+    --glass: rgba(255, 255, 255, .05);
+    --glass-border: rgba(255, 255, 255, .1);
+    --glass-shadow: rgba(0, 0, 0, .45);
+    --card-hover-shadow: 0 1rem 2.5rem -1rem rgba(0, 0, 0, .7), 0 0 0 1px rgba(138, 174, 255, .25);
+    --icon-shadow: rgba(0, 0, 0, .5);
+    --photo-shadow: rgba(0, 0, 0, .7);
+    --timeline: rgba(238, 242, 250, .2);
+    --divider: rgba(238, 242, 250, .14);
 }
 
 html {
-    background: var(--primary-color) !important;
-}
-
-.bg-gray {
-    color: var(--primary-text-color) !important;
-    background: var(--theme-background-color) !important;
-}
-
-.raised {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-
-.btn {
-    border: .05rem solid var(--secondary-color) !important;
-    color: var(--secondary-color) !important;
-}
-
-.btn.btn-primary {
-    color: var(--primary-text-color) !important;
-    background: var(--primary-color) !important;
-}
-
-.bg-gray a:not(.btn):not(.docs-logo),
-a {
-    color: var(--primary-text-color) !important;
-}
-
-.bg-gray .card .card-title {
-    color: var(--primary-color-lighter) !important;
-}
-
-.bg-gray .text-secondary,
-.card {
-    color: var(--secondary-text-color) !important;
-}
-
-.bg-primary {
-    color: var(--primary-text-color) !important;
-    background: var(--primary-color) !important;
-}
-
-.bg-primary .card {
-    color: var(--secondary-text-on-primary-color) !important;
-}
-
-.bg-primary .card .card-title {
-    color: var(--primary-text-color) !important;
-}
-
-.docs-brand {
-    color: var(--primary-color) !important;
-}
-
-.section-hero .docs-brand h2 {
-    color: var(--primary-color-lighter) !important;
-}
-
-.section-features.bg-gray h2 {
-    color: var(--primary-text-color) !important;
-}
-
-.grid-hero h1 {
-    color: var(--primary-text-color) !important;
-}
-
-.grid-hero h2 {
-    color: var(--secondary-text-color) !important;
-}
-
-.icon img {
-    filter: invert(1);
-}
-
-.experiences .list-header .empty-icon {
-    background-color: rgba(255, 255, 255, 0.03);
-}
-
-.experiences .list-header h5 {
-    color: var(--primary-text-color) !important;
-}
-
-.experiences .list-wrapper .list-item h6 {
-    color: var(--primary-text-color) !important;
-}
-
-.experiences .list-wrapper .list-line {
-    background-color: white;
-}
-
-.experiences .list-wrapper:last-child .list-line {
-    background: linear-gradient(to bottom, white, transparent);
-}
-
-.experiences .list-wrapper .list-item-bullet {
-    background-color: white;
-}
-
-.experiences .list-wrapper .list-item .when {
-    color: rgba(255, 255, 255, .6);
-}
-
-.experiences .list-wrapper .list-item p {
-    color: rgba(255, 255, 255, .85);
-}
-
-.first-bullet {
-    border-bottom: 12px solid white !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .top-btn:hover {
-        color: var(--primary-color-lighter) !important;
-    }
+    background: var(--bg);
 }
 
 .theme-toggle .icon-sun {
     display: block;
 }
 
-.theme-toggle .icon-moon {
-    display: none;
+/* The old bands' navy washing down from the top, with the logo's blue to
+   either side. */
+.hero-sky {
+    background:
+        radial-gradient(ellipse 1100px 560px at 50% 0%, rgba(0, 39, 157, .55) 0%, rgba(0, 26, 105, .25) 50%, rgba(0, 26, 105, 0) 100%),
+        radial-gradient(ellipse 700px 420px at 15% 20%, rgba(79, 141, 255, .14) 0%, rgba(79, 141, 255, 0) 70%),
+        radial-gradient(ellipse 700px 420px at 85% 15%, rgba(31, 111, 209, .2) 0%, rgba(31, 111, 209, 0) 70%);
 }
