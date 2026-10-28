@@ -49,13 +49,15 @@ scripts/
   dark-mode.js              — Theme toggle: system preference detection, localStorage persistence, themed `<picture>` sources
   age.js                    — Age calculation from birth date (vanilla JS)
   image-modal.js            — Photo gallery modal (swipe, pinch-to-zoom, keyboard nav)
-  scroll-to-gallery.js      — Smooth-scrolls to the "Recent shots" section on button click
-  scroll-to-experience.js   — Smooth-scrolls to the "Experience" section on button click
   overview-return.js        — Floating bottom-right button that appears on scroll and smooth-scrolls to top (named to avoid ad-block "back to top" cosmetic filters)
 images/                     — Logo, link preview, company logos
   apps/                     — App icons (light + dark pair per app) for the "Apps" section
   portfolio/                — Gallery photos, each stored as a full-size + thumbnail pair
 ```
+
+## Header navigation
+
+The Apps, Experience, and Recent shots shortcuts are fragment links using `.top-btn`. CSS handles smooth scrolling and respects reduced-motion preferences. The theme toggle remains a button.
 
 ## Apps section
 
