@@ -432,11 +432,11 @@ button:focus-visible {
 
 /* Apps ------------------------------------------------------------------- */
 
-/* Three columns above 960px. Keep the descriptions about the same length so
+/* Four columns above 1100px. Keep the descriptions about the same length so
    they wrap to the same line count side by side. */
 .app-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.25rem;
 }
 
@@ -612,6 +612,14 @@ button:focus-visible {
 }
 
 /* Responsive ------------------------------------------------------------- */
+
+/* Four across gets too narrow for the descriptions here, and two by two still keeps the
+   cards even, which a row of three plus one wouldn't. */
+@media (max-width: 1100px) {
+    .app-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 @media (max-width: 960px) {
     .app-grid {

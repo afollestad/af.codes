@@ -65,13 +65,15 @@ The "Apps" section (`#apps`) showcases the apps, above "Recent shots". Each app 
 `<a class="app-card">` in `.app-grid`, linking to its `<app>.af.codes` subdomain, that lifts on hover and keyboard
 focus.
 
-Keep the descriptions about the same length (~100 characters). The grid is three columns above 960px and stacks
-at or below it, which keeps the three-column text width in a narrow band, and `text-wrap: pretty` fills each
-paragraph to the same measure, so equal-length copy wraps to the same line count side by side.
+Keep the descriptions about the same length (~100 characters). The grid is four columns above 1100px, two by two
+down to 960px, and stacks at or below it, and `text-wrap: pretty` fills each paragraph to the same measure, so
+equal-length copy wraps to the same line count side by side.
 
 Each app's icons are copied from its site's `gh-pages` branch (`images/app-icon-light.png` /
 `images/app-icon-dark.png`) into `images/apps/<app>-light.png` / `<app>-dark.png`; re-copy them when an app's
-icon changes.
+icon changes. GifDrop publishes from `main` and has one icon, `images/app-icon.png`, so both of its files come
+from that, cropped by 11px on each side and scaled back to 256x256, since its plate stops short of the edges and
+the others' don't.
 
 Each icon is a `<picture>` whose dark `<source>` carries `data-theme="dark"` and a
 `(prefers-color-scheme: dark)` media query, with the light image as the `<img>` fallback. `dark-mode.js`
