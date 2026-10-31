@@ -4,5 +4,9 @@ exclude:
   - .claude/
   - .github/
   - "**/*.md"
+  # The pattern above doesn't match the repo root.
+  - AGENTS.md
+  - CLAUDE.md
+  - README.md
   - ".alveary.json"
   - og-image/
