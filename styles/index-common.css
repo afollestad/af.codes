@@ -115,7 +115,11 @@ button:focus-visible {
 
 .top-brand {
     left: 1.5rem;
+    /* The padding keeps the monogram's far corners inside the circle. */
     padding: .25rem;
+    background: var(--logo-circle);
+    box-shadow: 0 2px 6px var(--icon-shadow);
+    border-radius: 50%;
 }
 
 .top-brand img {

@@ -14,6 +14,9 @@
     --accent-text: #1a5fb4;
     --chip-bg: #1f6fd1;
     --chip-fg: #ffffff;
+    /* Behind the logo, at least 3:1 with its main blues, #0057d5 and #0186fb.
+       Matches the app sites. */
+    --logo-circle: #ffffff;
     /* Every stop holds at least 3:1 even where the hero's glow is strongest. */
     --title-gradient: linear-gradient(100deg, #0f3d91 5%, #1a5fb4 50%, #2371c4 95%);
     --glass: rgba(255, 255, 255, .7);

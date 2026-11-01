@@ -14,6 +14,9 @@
     --accent-text: #8aaeff;
     --chip-bg: #8aaeff;
     --chip-fg: #0a0f1d;
+    /* Behind the logo, at least 3:1 with its main blues, #0057d5 and #0186fb.
+       Matches the app sites. */
+    --logo-circle: #05070d;
     --title-gradient: linear-gradient(100deg, #d6e4ff 5%, #8aaeff 50%, #4f8dff 95%);
     --glass: rgba(255, 255, 255, .05);
     --glass-border: rgba(255, 255, 255, .1);
