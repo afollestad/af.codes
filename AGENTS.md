@@ -28,12 +28,15 @@ Examples of changes that should trigger a review:
 - Colors come from the `images/af.png` logo's blue. `styles/index-light.css` and `styles/index-dark.css` hold the color tokens and the hero's glow; `styles/index-common.css` holds everything theme-independent.
 - Both theme sheets ship on every load, media-scoped to `prefers-color-scheme`, as are the two `theme-color` metas, so with no override the page follows the OS with no JavaScript. `dark-mode.js` only steps in when the toggle stores an override; keep its theme colors in step with each sheet's `--bg`.
 - Section headings are `<h2 class="chip">` capsules filled with `--chip-bg`, like the app sites' chips.
+- The personal logo is a transparent, freeform blue AF monogram. Keep it uncropped, without a circular mask or a tile. `images/af.png` is the 1024x1024 sRGB master; the favicon uses tighter spacing, while the opaque Apple touch icon has extra safe space for the system's mask.
 
 ## Project Structure
 
 ```
 index.html                  — Single-page site (hero, intro, experience timeline, apps, photo gallery)
-favicon.png                 — 96x96 browser favicon derived from `images/af.png`
+favicon.png                 — Transparent 96x96 browser favicon derived from `images/af.png`
+favicon.ico                 — Transparent 16x16, 32x32, and 48x48 browser fallback
+apple-touch-icon.png        — Opaque 180x180 Home Screen icon with safe space
 CNAME                       — Custom domain config for GitHub Pages
 _config.yml                 — Jekyll config that excludes agent tooling, `og-image/`, and all Markdown from GitHub Pages builds
 .agents/
