@@ -68,11 +68,6 @@ button:focus-visible {
     padding: 0 1.25rem;
 }
 
-/* Reading width for the introduction and the experience timeline. */
-.container.narrow {
-    max-width: 46rem;
-}
-
 /* Hero ------------------------------------------------------------------- */
 
 .section-hero {
@@ -431,6 +426,7 @@ button:focus-visible {
     font-size: .95rem;
     line-height: 1.55;
     color: var(--secondary);
+    text-wrap: pretty;
 }
 
 /* Apps ------------------------------------------------------------------- */
@@ -443,8 +439,10 @@ button:focus-visible {
     gap: 1.25rem;
 }
 
-/* Each app is a single glass card that lifts on hover or keyboard focus. */
+/* Each app is a single glass card that lifts on hover or keyboard focus. Its
+   words only break when enlarged text would otherwise widen the whole page. */
 .app-card {
+    overflow-wrap: anywhere;
     padding: 1.75rem 1.25rem;
     border: 1px solid var(--glass-border);
     border-radius: 1.25rem;
@@ -485,7 +483,7 @@ button:focus-visible {
     color: var(--accent-text);
 }
 
-/* Stacked cards would otherwise stretch the text across the whole container. */
+/* Two-column cards would otherwise stretch the text across the whole card. */
 .app-card p {
     max-width: 21rem;
     margin: .75rem auto 0;
@@ -624,14 +622,6 @@ button:focus-visible {
     }
 }
 
-@media (max-width: 960px) {
-    .app-grid {
-        grid-template-columns: 1fr;
-        max-width: 30rem;
-        margin: 0 auto;
-    }
-}
-
 @media (max-width: 840px) {
     .gallery {
         grid-template-columns: repeat(3, 1fr);
@@ -668,6 +658,35 @@ button:focus-visible {
         border-left: none;
     }
 
+    /* Two columns leave little width on a phone, so the cards tighten up. */
+    .app-grid {
+        gap: .75rem;
+    }
+
+    .app-card {
+        padding: 1.25rem .75rem;
+    }
+
+    .app-icon {
+        width: 4.5rem;
+        margin-bottom: .75rem;
+    }
+
+    .app-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .app-platforms {
+        font-size: .8rem;
+        text-wrap: balance;
+    }
+
+    .app-card p {
+        margin-top: .5rem;
+        font-size: .875rem;
+        line-height: 1.5;
+    }
+
     .gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: .75rem;
@@ -676,6 +695,14 @@ button:focus-visible {
 
 @media (max-width: 480px) {
     .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* In ems so it also catches enlarged text: below this, two columns are narrower than
+   their longest word. */
+@media (max-width: 19.9em) {
+    .app-grid {
         grid-template-columns: 1fr;
     }
 }

@@ -69,9 +69,10 @@ The "Apps" section (`#apps`) showcases the apps, above "Recent shots". Each app 
 `<a class="app-card">` in `.app-grid`, linking to its `<app>.af.codes` subdomain, that lifts on hover and keyboard
 focus.
 
-Keep the descriptions about the same length (~100 characters). The grid is four columns above 1100px, two by two
-down to 960px, and stacks at or below it, and `text-wrap: pretty` fills each paragraph to the same measure, so
-equal-length copy wraps to the same line count side by side.
+Keep the descriptions about the same length (~100 characters). The grid is four columns above 1100px and two by two
+at or below it, tightening the cards at or below 600px and stacking only below 19.9em (a very narrow screen or
+enlarged text), and `text-wrap: pretty` fills each paragraph to the same measure, so equal-length copy wraps to the
+same line count side by side. At every width it fills the container, so its edges match the other sections'.
 
 Each app's icons are copied from its site's `gh-pages` branch (`images/app-icon-light.png` /
 `images/app-icon-dark.png`) into `images/apps/<app>-light.png` / `<app>-dark.png`; re-copy them when an app's
