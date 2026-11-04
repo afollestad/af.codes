@@ -8,8 +8,8 @@ cd "$(dirname "$0")/.."
 photos=$(grep -o 'images/portfolio/[^"]*_thumbnail\.jpg' index.html | head -n 6 | paste -sd , -)
 apps=$(grep -o 'images/apps/[^"]*-dark\.png' index.html | paste -sd , -)
 
-chrome="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-[ -x "$chrome" ] || { echo "Google Chrome not found at $chrome" >&2; exit 1; }
+chrome="${CHROME_PATH:-/Applications/Google Chrome.app/Contents/MacOS/Google Chrome}"
+command -v "$chrome" >/dev/null || { echo "Chrome not found at $chrome; set CHROME_PATH." >&2; exit 1; }
 
 # A throwaway profile, so this never touches (or waits on) a running Chrome.
 profile=$(mktemp -d)
@@ -24,4 +24,7 @@ rm -f images/og-image.png
     --screenshot="$PWD/images/og-image.png" \
     "file://$PWD/og-image/og-image.html?photos=$photos&apps=$apps" 2>/dev/null
 
+# Chrome exits 0 even when it can't write the screenshot, and so does sips on a
+# missing file, so check the file itself.
+[ -s images/og-image.png ] || { echo "Render failed: images/og-image.png was not written." >&2; exit 1; }
 sips -g pixelWidth -g pixelHeight -g hasAlpha images/og-image.png
