@@ -69,16 +69,20 @@ The "Apps" section (`#apps`) showcases the apps, above "Recent shots". Each app 
 `<a class="app-card">` in `.app-grid`, linking to its `<app>.af.codes` subdomain, that lifts on hover and keyboard
 focus.
 
-Keep the descriptions about the same length (~100 characters). The grid is four columns above 1100px and two
-columns at or below it, tightening the cards at or below 600px and stacking only below 19.9em (a very narrow screen or
-enlarged text), and `text-wrap: pretty` fills each paragraph to the same measure, so equal-length copy wraps to the
-same line count side by side. At every width it fills the container, so its edges match the other sections'.
+Keep the descriptions short and about the same length (~60 characters), so they wrap to two lines on desktop. The
+grid is four columns above 1100px and two columns at or below it, tightening the cards at or below 600px and stacking
+only below 19.9em (a very narrow screen or enlarged text), and `text-wrap: pretty` fills each paragraph to the same
+measure, so equal-length copy wraps to the same line count side by side. At every width it fills the container, so its
+edges match the other sections'.
 
 Each app's icons are copied from its site's `gh-pages` branch (`images/app-icon-light.png` /
 `images/app-icon-dark.png`) into `images/apps/<app>-light.png` / `<app>-dark.png`; re-copy them when an app's
 icon changes. GifDrop publishes from `main` and has one icon, `images/app-icon.png`, so both of its files come
 from that, cropped by 11px on each side and scaled back to 256x256, since its plate stops short of the edges and
 the others' don't.
+
+Each icon's drop shadow keeps the app sites' hero-icon proportions (`.6rem` offset and `1.2rem` blur under a 7rem
+icon), so it's set alongside every icon size, including the link preview's in `og-image/og-image.html`.
 
 Each icon is a `<picture>` whose dark `<source>` carries `data-theme="dark"` and a
 `(prefers-color-scheme: dark)` media query, with the light image as the `<img>` fallback. `dark-mode.js`

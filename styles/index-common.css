@@ -443,7 +443,7 @@ button:focus-visible {
    words only break when enlarged text would otherwise widen the whole page. */
 .app-card {
     overflow-wrap: anywhere;
-    padding: 1.75rem .625rem;
+    padding: 1.25rem .625rem;
     border: 1px solid var(--glass-border);
     border-radius: 1.25rem;
     background: var(--glass);
@@ -464,11 +464,13 @@ button:focus-visible {
     transform: translateY(-4px);
 }
 
-/* The icons are pre-masked squircles; drop-shadow follows their alpha. */
+/* The icons are pre-masked squircles; drop-shadow follows their alpha. The shadow
+   keeps the app sites' proportions (.6rem/1.2rem under a 7rem icon), so every
+   icon size sets its own, here, on phones below and in the link preview. */
 .app-icon {
-    width: 5.5rem;
-    margin: 0 auto 1rem;
-    filter: drop-shadow(0 .5rem 1rem var(--icon-shadow));
+    width: 4rem;
+    margin: 0 auto .75rem;
+    filter: drop-shadow(0 .35rem .7rem var(--icon-shadow));
 }
 
 .app-card h3 {
@@ -486,7 +488,7 @@ button:focus-visible {
 /* Two-column cards would otherwise stretch the text across the whole card. */
 .app-card p {
     max-width: 21rem;
-    margin: .75rem auto 0;
+    margin: .5rem auto 0;
     font-size: .95rem;
     line-height: 1.55;
     color: var(--secondary);
@@ -668,8 +670,9 @@ button:focus-visible {
     }
 
     .app-icon {
-        width: 4rem;
+        width: 3.5rem;
         margin-bottom: .6rem;
+        filter: drop-shadow(0 .3rem .6rem var(--icon-shadow));
     }
 
     .app-card h3 {
