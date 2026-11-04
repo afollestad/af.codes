@@ -443,7 +443,7 @@ button:focus-visible {
    words only break when enlarged text would otherwise widen the whole page. */
 .app-card {
     overflow-wrap: anywhere;
-    padding: 1.75rem 1.25rem;
+    padding: 1.75rem .625rem;
     border: 1px solid var(--glass-border);
     border-radius: 1.25rem;
     background: var(--glass);
@@ -664,12 +664,12 @@ button:focus-visible {
     }
 
     .app-card {
-        padding: 1.25rem .75rem;
+        padding: 1rem .5rem;
     }
 
     .app-icon {
-        width: 4.5rem;
-        margin-bottom: .75rem;
+        width: 4rem;
+        margin-bottom: .6rem;
     }
 
     .app-card h3 {
@@ -677,14 +677,14 @@ button:focus-visible {
     }
 
     .app-platforms {
-        font-size: .8rem;
+        font-size: .75rem;
         text-wrap: balance;
     }
 
     .app-card p {
-        margin-top: .5rem;
-        font-size: .875rem;
-        line-height: 1.5;
+        margin-top: .4rem;
+        font-size: .8125rem;
+        line-height: 1.45;
     }
 
     .gallery {
