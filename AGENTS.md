@@ -21,7 +21,7 @@ Examples of changes that should trigger a review:
 ## Tech Stack
 
 - **No build tools or JS frameworks** — plain HTML, CSS, and vanilla JavaScript.
-- **No CSS framework.** The stylesheets are hand-written on the same base as the app sites (the `gh-pages` branches of Alveary, Chromahora and Carouline), so carry layout changes across from them rather than letting the four drift apart.
+- **No CSS framework.** The stylesheets are hand-written on the same base as the app sites (the `gh-pages` branches of Alveary, Chromahora, Carouline and Roastier), so carry layout changes across from them rather than letting the five drift apart.
 
 ## Look and theming
 
@@ -29,7 +29,7 @@ Examples of changes that should trigger a review:
 - Both theme sheets ship on every load, media-scoped to `prefers-color-scheme`, as are the two `theme-color` metas, so with no override the page follows the OS with no JavaScript. `dark-mode.js` only steps in when the toggle stores an override; keep its theme colors in step with each sheet's `--bg`.
 - Section headings are `<h2 class="chip">` capsules filled with `--chip-bg`, like the app sites' chips.
 - The personal logo is a transparent, freeform blue AF monogram. Keep it uncropped, without a circular mask. In the header it sits on a circle filled with `--logo-circle`, white in the light theme and near-black in the dark one, with a drop shadow in `--icon-shadow`. Both hold at least 3:1 with its main blues, `#0057d5` and `#0186fb`. `images/af.png` is the 1024x1024 sRGB master; the favicon uses tighter spacing, while the opaque Apple touch icon has extra safe space for the system's mask.
-- Alveary, Chromahora, Carouline and GifDrop load `https://af.codes/images/af.png` directly and repeat the circle and its values on their sites (`gh-pages`, or `main` for GifDrop), so keep that path stable and change those values together.
+- Alveary, Chromahora, Carouline, GifDrop and Roastier load `https://af.codes/images/af.png` directly and repeat the circle and its values on their sites (`gh-pages`, or `main` for GifDrop), so keep that path stable and change those values together.
 
 ## Project Structure
 
@@ -69,8 +69,8 @@ The "Apps" section (`#apps`) showcases the apps, above "Recent shots". Each app 
 `<a class="app-card">` in `.app-grid`, linking to its `<app>.af.codes` subdomain, that lifts on hover and keyboard
 focus.
 
-Keep the descriptions about the same length (~100 characters). The grid is four columns above 1100px and two by two
-at or below it, tightening the cards at or below 600px and stacking only below 19.9em (a very narrow screen or
+Keep the descriptions about the same length (~100 characters). The grid is four columns above 1100px and two
+columns at or below it, tightening the cards at or below 600px and stacking only below 19.9em (a very narrow screen or
 enlarged text), and `text-wrap: pretty` fills each paragraph to the same measure, so equal-length copy wraps to the
 same line count side by side. At every width it fills the container, so its edges match the other sections'.
 

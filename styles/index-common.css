@@ -614,7 +614,7 @@ button:focus-visible {
 
 /* Responsive ------------------------------------------------------------- */
 
-/* Four across gets too narrow for the descriptions here, and two by two still keeps the
+/* Four across gets too narrow for the descriptions here, and two columns still keep the
    cards even, which a row of three plus one wouldn't. */
 @media (max-width: 1100px) {
     .app-grid {
