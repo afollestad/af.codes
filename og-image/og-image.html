@@ -99,7 +99,8 @@
 
     <script>
         (function () {
-            // render.sh passes repo-relative paths, comma separated.
+            // render.sh passes comma-separated sources: repo-relative photo paths, and
+            // file:// URLs for the app icons it downloaded, which are used as given.
             var params = new URLSearchParams(location.search);
 
             function fill(id, param, className) {
@@ -108,7 +109,7 @@
                 for (var i = 0; i < paths.length; i++) {
                     var img = document.createElement('img');
                     img.className = className;
-                    img.src = '../' + paths[i];
+                    img.src = /^[a-z]+:/.test(paths[i]) ? paths[i] : '../' + paths[i];
                     img.alt = '';
                     target.appendChild(img);
                 }

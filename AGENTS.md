@@ -21,7 +21,7 @@ Examples of changes that should trigger a review:
 ## Tech Stack
 
 - **No build tools or JS frameworks** — plain HTML, CSS, and vanilla JavaScript.
-- **No CSS framework.** The stylesheets are hand-written on the same base as the app sites (the `gh-pages` branches of Alveary, Chromahora, Carouline and Roastier), so carry layout changes across from them rather than letting the five drift apart.
+- **No CSS framework.** The stylesheets are hand-written on the same base as the app sites (the `gh-pages` branches of Alveary, Chromahora, Carouline, Roastier and Reqling), so carry layout changes across from them rather than letting the six drift apart.
 
 ## Look and theming
 
@@ -29,7 +29,7 @@ Examples of changes that should trigger a review:
 - Both theme sheets ship on every load, media-scoped to `prefers-color-scheme`, as are the two `theme-color` metas, so with no override the page follows the OS with no JavaScript. `dark-mode.js` only steps in when the toggle stores an override; keep its theme colors in step with each sheet's `--bg`.
 - Section headings are `<h2 class="chip">` capsules filled with `--chip-bg`, like the app sites' chips.
 - The personal logo is a transparent, freeform blue AF monogram. Keep it uncropped, without a circular mask. In the header it sits on a circle filled with `--logo-circle`, white in the light theme and near-black in the dark one, with a drop shadow in `--icon-shadow`. Both hold at least 3:1 with its main blues, `#0057d5` and `#0186fb`. `images/af.png` is the 1024x1024 sRGB master; the favicon uses tighter spacing, while the opaque Apple touch icon has extra safe space for the system's mask.
-- Alveary, Chromahora, Carouline, GifDrop and Roastier load `https://af.codes/images/af.png` directly and repeat the circle and its values on their sites (`gh-pages`, or `main` for GifDrop), so keep that path stable and change those values together.
+- Alveary, Chromahora, Carouline, GifDrop, Roastier and Reqling load `https://af.codes/images/af.png` directly and repeat the circle and its values on their sites (`gh-pages`, or `main` for GifDrop), so keep that path stable and change those values together.
 
 ## Project Structure
 
@@ -55,7 +55,6 @@ scripts/
   image-modal.js            — Photo gallery modal (swipe, pinch-to-zoom, keyboard nav)
   overview-return.js        — Floating bottom-right button that appears on scroll and smooth-scrolls to top (named to avoid ad-block "back to top" cosmetic filters)
 images/                     — Logo, link preview, company logos
-  apps/                     — App icons (light + dark pair per app) for the "Apps" section
   portfolio/                — Gallery photos, each stored as a full-size + thumbnail pair
 ```
 
@@ -69,17 +68,17 @@ The "Apps" section (`#apps`) showcases the apps, above "Recent shots". Each app 
 `<a class="app-card">` in `.app-grid`, linking to its `<app>.af.codes` subdomain, that lifts on hover and keyboard
 focus.
 
-Keep the descriptions short and about the same length (~60 characters), so they wrap to two lines on desktop. The
+Keep the descriptions short and about the same length (~60 characters), so they wrap to two lines on desktop, and
+count the lines in a browser at four columns, since a few long words can push 60 characters to three. The
 grid is four columns above 1100px and two columns at or below it, tightening the cards at or below 600px and stacking
 only below 19.9em (a very narrow screen or enlarged text), and `text-wrap: pretty` fills each paragraph to the same
 measure, so equal-length copy wraps to the same line count side by side. At every width it fills the container, so its
 edges match the other sections'.
 
-Each app's icons are copied from its site's `gh-pages` branch (`images/app-icon-light.png` /
-`images/app-icon-dark.png`) into `images/apps/<app>-light.png` / `<app>-dark.png`; re-copy them when an app's
-icon changes. GifDrop publishes from `main` and has one icon, `images/app-icon.png`, so both of its files come
-from that, cropped by 11px on each side and scaled back to 256x256, since its plate stops short of the edges and
-the others' don't.
+Each app's icons load from its own site, `https://<app>.af.codes/images/app-icon-light.png` and `-dark.png`, so
+they can't drift from it; there are no copies here. A renamed icon on an app site breaks its card without any
+error, so those paths stay stable there. GifDrop's pair is cropped from its one `images/app-icon.png` on its
+`main`, since its plate stops short of the edges and the others' don't.
 
 Each icon's drop shadow keeps the app sites' hero-icon proportions (`.6rem` offset and `1.2rem` blur under a 7rem
 icon), so it's set alongside every icon size, including the link preview's in `og-image/og-image.html`.
@@ -124,7 +123,9 @@ When adding photos:
 
 `images/og-image.png` is the 1200x630 preview link unfurls show: the logo, name and title, every app's dark
 icon, and the six newest photos, on the dark theme. `og-image/render.sh` renders it with headless Chrome from
-`og-image/og-image.html`, reading the photos and icons from `index.html` so the preview matches the page.
+`og-image/og-image.html`, reading the photos and icons from `index.html` so the preview matches the page. It
+downloads the icons from the app sites first, so rendering needs a network connection and fails on any icon it
+can't fetch.
 
 **Run `og-image/render.sh` and commit `images/og-image.png` in the same change as anything it shows:** adding,
 removing or reordering photos among the newest six, adding or removing an app or changing its icon, changing the
